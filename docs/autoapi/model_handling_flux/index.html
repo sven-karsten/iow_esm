@@ -638,12 +638,40 @@ the work directory has been created and the content of the input folder has been
 <dl class="py method">
 <dt class="sig sig-object py" id="model_handling_flux.ModelHandler.get_model_executable">
 <span class="sig-name descname"><span class="pre">get_model_executable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_handling_flux.ModelHandler.get_model_executable" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method to get the name of the model’s excutable.</p>
+<p>This method is overwritten by the child class and will be called when the MPI run script is created.</p>
+<p>It should typically do:</p>
+<ul class="simple">
+<li><p>Return the name of the executable that is located in your work directory after create_work_directory has been called.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Name of the excutable, e.g. “fms_MOM_SIS.x”</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="model_handling_flux.ModelHandler.get_num_threads">
 <span class="sig-name descname"><span class="pre">get_num_threads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_handling_flux.ModelHandler.get_num_threads" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method to get the number of threads the model is using.</p>
+<p>This method is overwritten by the child class and will be called when the paralleization layout is created.</p>
+<p>It should typically do:</p>
+<ul class="simple">
+<li><p>Return the number of threads using e.g. settings in the model’s input files.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of used threads</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

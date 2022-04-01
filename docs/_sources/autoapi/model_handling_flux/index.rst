@@ -60,8 +60,30 @@ Classes
 
    .. py:method:: get_model_executable(self)
 
+      Method to get the name of the model's excutable.
+
+      This method is overwritten by the child class and will be called when the MPI run script is created.
+
+      It should typically do:
+
+      * Return the name of the executable that is located in your work directory after create_work_directory has been called. 
+                                                          
+      :return:                        Name of the excutable, e.g. "fms_MOM_SIS.x"
+      :rtype:                         str
+
 
    .. py:method:: get_num_threads(self)
+
+      Method to get the number of threads the model is using.
+
+      This method is overwritten by the child class and will be called when the paralleization layout is created.
+
+      It should typically do:
+
+      * Return the number of threads using e.g. settings in the model's input files. 
+                                      
+      :return:                        Number of used threads
+      :rtype:                         int    
 
 
 

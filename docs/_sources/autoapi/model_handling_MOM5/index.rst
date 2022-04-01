@@ -60,7 +60,7 @@ Classes
 
    .. py:method:: check_for_success(self, work_directory_root, start_date, end_date)
 
-      Method to if model run was successful or not.
+      Method to check if model run was successful or not.
 
       This method is overwritten by the child class and will be called after 
       the MPI task has finished.
@@ -84,14 +84,54 @@ Classes
 
    .. py:method:: move_results(self, work_directory_root, start_date, end_date)
 
+      Method to move results from work to output folder.
+
+      This method is overwritten by the child class and will be called after 
+      the check_for_success method has returned `True`.
+
+      It should typically do:
+
+      * Move all files you want to keep that are used or produced by your model.
+
+      :param work_directory_root:     Is the local work directory common to all models, thus it is one lvel above my_directory
+      :type work_directory_root:      str
+
+      :param start_date:              Start date of the current working period, format YYYYMMDD, e.g. 20220325 for the 25th of March 2022
+      :type start_date:               str 
+                                      
+      :param end_date:                End date of the current working period, format YYYYMMDD, e.g. 20220325 for the 25th of March 2022
+      :type end_date:                 str      
+
 
    .. py:method:: grid_convert_to_SCRIP(self)
 
 
    .. py:method:: get_model_executable(self)
 
+      Method to get the name of the model's excutable.
+
+      This method is overwritten by the child class and will be called when the MPI run script is created.
+
+      It should typically do:
+
+      * Return the name of the executable that is located in your work directory after create_work_directory has been called. 
+                                                          
+      :return:                        Name of the excutable, e.g. "fms_MOM_SIS.x"
+      :rtype:                         str
+
 
    .. py:method:: get_num_threads(self)
+
+      Method to get the number of threads the model is using.
+
+      This method is overwritten by the child class and will be called when the paralleization layout is created.
+
+      It should typically do:
+
+      * Return the number of threads using e.g. settings in the model's input files. 
+                                      
+      :return:                        Number of used threads
+      :rtype:                         int    
 
 
 

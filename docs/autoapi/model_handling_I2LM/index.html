@@ -658,7 +658,7 @@ the work directory has been created and the content of the input folder has been
 <dl class="py method">
 <dt class="sig sig-object py" id="model_handling_I2LM.ModelHandler.check_for_success">
 <span class="sig-name descname"><span class="pre">check_for_success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_directory_root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_handling_I2LM.ModelHandler.check_for_success" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method to if model run was successful or not.</p>
+<dd><p>Method to check if model run was successful or not.</p>
 <p>This method is overwritten by the child class and will be called after
 the MPI task has finished.</p>
 <p>It should typically do:</p>
@@ -685,17 +685,61 @@ the MPI task has finished.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="model_handling_I2LM.ModelHandler.move_results">
 <span class="sig-name descname"><span class="pre">move_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_directory_root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_handling_I2LM.ModelHandler.move_results" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method to move results from work to output folder.</p>
+<p>This method is overwritten by the child class and will be called after
+the check_for_success method has returned <cite>True</cite>.</p>
+<p>It should typically do:</p>
+<ul class="simple">
+<li><p>Move all files you want to keep that are used or produced by your model.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>work_directory_root</strong> (<em>str</em>) – Is the local work directory common to all models, thus it is one lvel above my_directory</p></li>
+<li><p><strong>start_date</strong> (<em>str</em>) – Start date of the current working period, format YYYYMMDD, e.g. 20220325 for the 25th of March 2022</p></li>
+<li><p><strong>end_date</strong> (<em>str</em>) – End date of the current working period, format YYYYMMDD, e.g. 20220325 for the 25th of March 2022</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="model_handling_I2LM.ModelHandler.get_model_executable">
 <span class="sig-name descname"><span class="pre">get_model_executable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_handling_I2LM.ModelHandler.get_model_executable" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method to get the name of the model’s excutable.</p>
+<p>This method is overwritten by the child class and will be called when the MPI run script is created.</p>
+<p>It should typically do:</p>
+<ul class="simple">
+<li><p>Return the name of the executable that is located in your work directory after create_work_directory has been called.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Name of the excutable, e.g. “fms_MOM_SIS.x”</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="model_handling_I2LM.ModelHandler.get_num_threads">
 <span class="sig-name descname"><span class="pre">get_num_threads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_handling_I2LM.ModelHandler.get_num_threads" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method to get the number of threads the model is using.</p>
+<p>This method is overwritten by the child class and will be called when the paralleization layout is created.</p>
+<p>It should typically do:</p>
+<ul class="simple">
+<li><p>Return the number of threads using e.g. settings in the model’s input files.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of used threads</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
