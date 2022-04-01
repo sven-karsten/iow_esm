@@ -65,8 +65,34 @@ Functions
 
 .. py:function:: get_model_handler(global_settings, model)
 
+   Method to get a single model handler.
+
+   This method imports the model-specific handling module `model_handling_ABCD.py`
+   where `ABCD` is a four letter acronym of the model.
+
+   :param global_settings:         Object containing the global settings
+   :type global_settings:          class:`GlobalSettings` 
+
+   :param model:                   Name of the model's input folder, usually model_domain, e.g. MOM5_Baltic. IMPORTANT: model names can only have four letters as e.g. MOM5, CCLM, GETM etc.
+   :type model:                    str
+                                   
+   :return:                        Specific model handler object
+   :rtype:                         class:`ModelHandler`      
+
 
 .. py:function:: get_model_handlers(global_settings)
+
+   Method to get handlers for all models that have input folders.
+
+   This method checks the input folder and creates model handler objects for found models. 
+   If there is one atmospheric model and at least one bottom model the run will be interpreted as a coupled run.
+   In that case the flux_calculator is added to the models.
+
+   :param global_settings:         Object containing the global settings
+   :type global_settings:          class:`GlobalSettings` 
+                                   
+   :return:                        Dictionary of specific model handler objects. The keys of the dictionary are the names of the input folders
+   :rtype:                         dict    
 
 
 .. py:class:: ModelHandlerBase(model_type, global_settings, my_directory)
@@ -75,11 +101,13 @@ Functions
 
    This constructor must be called in the constructor of the child class as e.g.
    `ModelHandlerBase.__init__(self, model_handling.ModelTypes.bottom, global_settings, my_directory)`
+   The child class must be implmented as `ModelHandler` in a python module called `model_handling_ABCD.py` 
+   where `ABCD` is a four letter acronym of your model.
 
    :param global_settings:         Object containing the global settings
    :type global_settings:          class:`GlobalSettings` 
 
-   :param my_directory:            Name of the model's input folder, usually model_domain, e.g. MOM5_Baltic. IMPORTANT: model names can only have for letters as e.g. MOM5, CCLM, GETM etc.
+   :param my_directory:            Name of the model's input folder, usually model_domain, e.g. MOM5_Baltic. IMPORTANT: model names can only have four letters as e.g. MOM5, CCLM, GETM etc.
    :type my_directory:             str
                                    
    :param model_type:              Must be one of attributes of class `ModelTypes`

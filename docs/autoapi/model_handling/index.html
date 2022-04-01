@@ -724,10 +724,10 @@ const thebe_selector_output = ".output, .cell_output"
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#model_handling.get_model_handler" title="model_handling.get_model_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_model_handler</span></code></a>(global_settings, model)</p></td>
-<td><p></p></td>
+<td><p>Method to get a single model handler.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#model_handling.get_model_handlers" title="model_handling.get_model_handlers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_model_handlers</span></code></a>(global_settings)</p></td>
-<td><p></p></td>
+<td><p>Method to get handlers for all models that have input folders.</p></td>
 </tr>
 </tbody>
 </table>
@@ -766,24 +766,58 @@ const thebe_selector_output = ".output, .cell_output"
 <dl class="py function">
 <dt class="sig sig-object py" id="model_handling.get_model_handler">
 <span class="sig-prename descclassname"><span class="pre">model_handling.</span></span><span class="sig-name descname"><span class="pre">get_model_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">global_settings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_handling.get_model_handler" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method to get a single model handler.</p>
+<p>This method imports the model-specific handling module <cite>model_handling_ABCD.py</cite>
+where <cite>ABCD</cite> is a four letter acronym of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>global_settings</strong> (class:<cite>GlobalSettings</cite>) – Object containing the global settings</p></li>
+<li><p><strong>model</strong> (<em>str</em>) – Name of the model’s input folder, usually model_domain, e.g. MOM5_Baltic. IMPORTANT: model names can only have four letters as e.g. MOM5, CCLM, GETM etc.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Specific model handler object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>class:<cite>ModelHandler</cite></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="model_handling.get_model_handlers">
 <span class="sig-prename descclassname"><span class="pre">model_handling.</span></span><span class="sig-name descname"><span class="pre">get_model_handlers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">global_settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_handling.get_model_handlers" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method to get handlers for all models that have input folders.</p>
+<p>This method checks the input folder and creates model handler objects for found models.
+If there is one atmospheric model and at least one bottom model the run will be interpreted as a coupled run.
+In that case the flux_calculator is added to the models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>global_settings</strong> (class:<cite>GlobalSettings</cite>) – Object containing the global settings</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of specific model handler objects. The keys of the dictionary are the names of the input folders</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="model_handling.ModelHandlerBase">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model_handling.</span></span><span class="sig-name descname"><span class="pre">ModelHandlerBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_settings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">my_directory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_handling.ModelHandlerBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for all specific model handler.</p>
 <p>This constructor must be called in the constructor of the child class as e.g.
-<cite>ModelHandlerBase.__init__(self, model_handling.ModelTypes.bottom, global_settings, my_directory)</cite></p>
+<cite>ModelHandlerBase.__init__(self, model_handling.ModelTypes.bottom, global_settings, my_directory)</cite>
+The child class must be implmented as <cite>ModelHandler</cite> in a python module called <cite>model_handling_ABCD.py</cite>
+where <cite>ABCD</cite> is a four letter acronym of your model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>global_settings</strong> (class:<cite>GlobalSettings</cite>) – Object containing the global settings</p></li>
-<li><p><strong>my_directory</strong> (<em>str</em>) – Name of the model’s input folder, usually model_domain, e.g. MOM5_Baltic. IMPORTANT: model names can only have for letters as e.g. MOM5, CCLM, GETM etc.</p></li>
+<li><p><strong>my_directory</strong> (<em>str</em>) – Name of the model’s input folder, usually model_domain, e.g. MOM5_Baltic. IMPORTANT: model names can only have four letters as e.g. MOM5, CCLM, GETM etc.</p></li>
 <li><p><strong>model_type</strong> (<em>str</em>) – Must be one of attributes of class <cite>ModelTypes</cite></p></li>
 </ul>
 </dd>

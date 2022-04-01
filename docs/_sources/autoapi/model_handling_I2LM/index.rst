@@ -25,11 +25,13 @@ Classes
 
    This constructor must be called in the constructor of the child class as e.g.
    `ModelHandlerBase.__init__(self, model_handling.ModelTypes.bottom, global_settings, my_directory)`
+   The child class must be implmented as `ModelHandler` in a python module called `model_handling_ABCD.py` 
+   where `ABCD` is a four letter acronym of your model.
 
    :param global_settings:         Object containing the global settings
    :type global_settings:          class:`GlobalSettings` 
 
-   :param my_directory:            Name of the model's input folder, usually model_domain, e.g. MOM5_Baltic. IMPORTANT: model names can only have for letters as e.g. MOM5, CCLM, GETM etc.
+   :param my_directory:            Name of the model's input folder, usually model_domain, e.g. MOM5_Baltic. IMPORTANT: model names can only have four letters as e.g. MOM5, CCLM, GETM etc.
    :type my_directory:             str
                                    
    :param model_type:              Must be one of attributes of class `ModelTypes`
