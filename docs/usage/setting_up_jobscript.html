@@ -490,24 +490,50 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#personal-adaptions">
-   Personal adaptions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#leave-unchanged">
-   Leave unchanged
+  <a class="reference internal nav-link" href="#jobscript-templates-for-the-slurm-queuing-system">
+   Jobscript templates for the slurm queuing system
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#automatically-replaced">
-     Automatically replaced
+    <a class="reference internal nav-link" href="#personal-adaptions">
+     Personal adaptions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#necessary">
-     Necessary
+    <a class="reference internal nav-link" href="#leave-unchanged">
+     Leave unchanged
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#automatically-replaced">
+       Automatically replaced
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#necessary">
+       Necessary
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jobscript-templates-without-a-queuing-system">
+   Jobscript templates without a queuing system
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Leave unchanged
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Necessary
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -532,24 +558,50 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#personal-adaptions">
-   Personal adaptions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#leave-unchanged">
-   Leave unchanged
+  <a class="reference internal nav-link" href="#jobscript-templates-for-the-slurm-queuing-system">
+   Jobscript templates for the slurm queuing system
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#automatically-replaced">
-     Automatically replaced
+    <a class="reference internal nav-link" href="#personal-adaptions">
+     Personal adaptions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#necessary">
-     Necessary
+    <a class="reference internal nav-link" href="#leave-unchanged">
+     Leave unchanged
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#automatically-replaced">
+       Automatically replaced
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#necessary">
+       Necessary
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jobscript-templates-without-a-queuing-system">
+   Jobscript templates without a queuing system
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Leave unchanged
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Necessary
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -564,23 +616,26 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="setting-up-your-jobscript-template">
 <span id="usage-setting-up-jobscript"></span><h1>Setting up your jobscript template<a class="headerlink" href="#setting-up-your-jobscript-template" title="Permalink to this headline">¶</a></h1>
-<p>The jobscript template is a template for the slurm script that is submitted to run your job.
+<p>The jobscript template is a template for the script that is submitted/executed to run your job.
 In order to adapt it to your needs you will most probably modify the example templates in the example setups.
 However, certain lines should not be changed.</p>
+<div class="section" id="jobscript-templates-for-the-slurm-queuing-system">
+<h2>Jobscript templates for the slurm queuing system<a class="headerlink" href="#jobscript-templates-for-the-slurm-queuing-system" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="personal-adaptions">
-<h2>Personal adaptions<a class="headerlink" href="#personal-adaptions" title="Permalink to this headline">¶</a></h2>
+<h3>Personal adaptions<a class="headerlink" href="#personal-adaptions" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --job-name=&lt;your_favorite_name&gt;</span>
 <span class="c1">#SBATCH -t dd-hh:mm:ss</span>
 <span class="c1">#SBATCH --account=&lt;project/user&gt; </span>
 <span class="c1">#SBATCH -p &lt;partition&gt;</span>
 </pre></div>
 </div>
-<p>Here you may enter whatever is needed by you.</p>
+<p>Here you may enter whatever is needed by you.
+These settings are in general completely machine specific and therefore please refer to the corresponding documentation, e.g. for the HLRN this is <a class="reference external" href="https://www.hlrn.de/doc/display/PUB/Compute+node+partitions">https://www.hlrn.de/doc/display/PUB/Compute+node+partitions</a>.</p>
 </div>
 <div class="section" id="leave-unchanged">
-<h2>Leave unchanged<a class="headerlink" href="#leave-unchanged" title="Permalink to this headline">¶</a></h2>
+<h3>Leave unchanged<a class="headerlink" href="#leave-unchanged" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="automatically-replaced">
-<h3>Automatically replaced<a class="headerlink" href="#automatically-replaced" title="Permalink to this headline">¶</a></h3>
+<h4>Automatically replaced<a class="headerlink" href="#automatically-replaced" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --nodes=_NODES_</span>
 <span class="c1">#SBATCH --ntasks=_CORES_</span>
 <span class="c1">#SBATCH --tasks-per-node _CORESPERNODE_</span>
@@ -589,16 +644,34 @@ However, certain lines should not be changed.</p>
 <p>These lines will be replaced when the actual jobscript is created.</p>
 </div>
 <div class="section" id="necessary">
-<h3>Necessary<a class="headerlink" href="#necessary" title="Permalink to this headline">¶</a></h3>
+<h4>Necessary<a class="headerlink" href="#necessary" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --distribution=block,Pack</span>
 
 <span class="nb">export</span> <span class="nv">SLURM_CPU_BIND</span><span class="o">=</span>none
+module load &lt;...&gt;
 
 python3 run.py
 </pre></div>
 </div>
-<p>These lines are required that the model runs efficiently.
+<p>These lines are required that the model runs efficiently and that all necessary modules are loaded.
 The last line is actually start of the run.</p>
+</div>
+</div>
+</div>
+<div class="section" id="jobscript-templates-without-a-queuing-system">
+<h2>Jobscript templates without a queuing system<a class="headerlink" href="#jobscript-templates-without-a-queuing-system" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Leave unchanged<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4>Necessary<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module load &lt;...&gt;
+
+python3 run.py
+</pre></div>
+</div>
+<p>These lines are required that the model runs efficiently and that all necessary modules are loaded.
+The last line is actually start of the run.</p>
+</div>
 </div>
 </div>
 </div>

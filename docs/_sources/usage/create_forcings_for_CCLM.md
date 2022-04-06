@@ -73,3 +73,10 @@ These so-called `caf` or `cas` files can be found at the DKRZ servers for a few 
 The main input of the int2lm tool is the file `INPUT` in `input/I2LM_Eurocordex`.
 How to set it up correctly can be found in the original documentation https://www.cosmo-model.org/content/model/documentation/core/int2lm_2.08.pdf.
 Importantly, variables that have the value `*auto*` in the example setup will be overwritten when the job is running and you do not have to set them manually.
+
+
+## Start the run
+
+The int2lm tool is started as any other model within the IOW ESM.
+So either you use the command line interface, i.e. the `run.sh` script or you can start it with the GUI by hitting `Run`.
+See also [](getting_started:first_use) for how to run a model.

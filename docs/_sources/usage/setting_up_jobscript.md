@@ -1,12 +1,13 @@
 (usage:setting_up_jobscript)=
 # Setting up your jobscript template
 
-The jobscript template is a template for the slurm script that is submitted to run your job.
+The jobscript template is a template for the script that is submitted/executed to run your job.
 In order to adapt it to your needs you will most probably modify the example templates in the example setups.
 However, certain lines should not be changed.
 
+## Jobscript templates for the slurm queuing system
 
-## Personal adaptions
+### Personal adaptions
 
 ``` bash
 #SBATCH --job-name=<your_favorite_name>
@@ -16,10 +17,11 @@ However, certain lines should not be changed.
 ```
 
 Here you may enter whatever is needed by you.
+These settings are in general completely machine specific and therefore please refer to the corresponding documentation, e.g. for the HLRN this is https://www.hlrn.de/doc/display/PUB/Compute+node+partitions.
 
-## Leave unchanged
+### Leave unchanged
 
-### Automatically replaced 
+#### Automatically replaced 
 
 ``` bash
 #SBATCH --nodes=_NODES_
@@ -29,15 +31,32 @@ Here you may enter whatever is needed by you.
 
 These lines will be replaced when the actual jobscript is created.
 
-### Necessary
+#### Necessary
 
 ``` bash
 #SBATCH --distribution=block,Pack
 
 export SLURM_CPU_BIND=none
+module load <...>
 
 python3 run.py
 ```
 
-These lines are required that the model runs efficiently.
+These lines are required that the model runs efficiently and that all necessary modules are loaded.
+The last line is actually start of the run.
+
+
+## Jobscript templates without a queuing system
+
+### Leave unchanged
+
+#### Necessary
+
+``` bash
+module load <...>
+
+python3 run.py
+```
+
+These lines are required that the model runs efficiently and that all necessary modules are loaded.
 The last line is actually start of the run.
