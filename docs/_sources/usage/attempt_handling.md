@@ -18,85 +18,124 @@ This module has to contain a class with some mandatory members and methods as il
 ``` python
 # imports for this example, you can import arbitrary modules here
 import os
-import glob
 
-# class name is arbitrary
 class MyAttemptHandler():
+    """Class that handles your attempts.
     
-        # constructor can have arbitrary arguments
-        def __init__(self, root = "."):
-                # !!! mandatory member attempts must be a list of strings
-                self.attempts = ["1", "2"]
-                # !!! mandatory member last_attempt_file must be a name of a file (can be a path, absolute or relative to "/path/to/IOW_ESM/scripts/run") that can be created and read
-                self.last_attempt_file = "my_last_attempt.txt"
+    The name of the class is arbitrary
 
-                # optional arguments and members
-                # it makes sense to memorize the root directory
-                self.root = root
+    Mandatory attributes: `next_attempt` which represents your next attempt, type must be convertable by str() function to string, typically a string or an integer, if all attempts are exhausted and you want to stop this must be set to None.
+                                    
+    Class can have arbitrarily more optional attributes. 
+    However, all attributes must be serializable by the pickle library, see https://docs.python.org/3/library/pickle.html.
+    The serialization into a file is necessary to store the state of the attempt handler over several jobs.
+    IMPORTANT: If you want to start from scratch, you have to remove such files, which are sored as <run_name>_attempt_handler.obj in the root directory.
 
-        # !!! mandatory method for preparing an attempt, signature is obligatory
-        def prepare_attempt(self, attempt):
+    Parameters can be arbitrary. In this example:
 
-                if attempt == self.attempts[0]:
-                        # do nothing for the first attempt
-                        return
+    :param root:        Path to the root directory
+    :type root:         str     
+        
+    """
+    
+    def __init__(self, root = "."):  
+    
+        # initialize mandatory attribute self.next_attempt
+        self.next_attempt = 1
+    
+        
+        # optional arguments and members
+        
+        # it makes sense to memorize the root directory
+        self.root = root     
+        
+        # our maximal number of attempts
+        self.max_attempts = 4
+        
+    def prepare_attempt(self, **kwargs):
+        r"""
+        Mandatory method to prepare the attempt.
+        
+        Do whatever is necessary to set up the next attempt, e.g. manipulating input files.
 
-                if attempt == self.attempts[1]:
-                        # do something with input files for second attempt
-                        os.system("touch " + self.root + "/attempt2.txt")
-                        return
+        :Keyword Arguments:
 
-                return
+        * **start_date** (*int*) --
+          Start date of the current job in format YYYMMDD
+        * **end_date** (*int*) --
+          End date of the current job in format YYYMMDD  
+                
+        """     
 
-        # !!! mandatory method for evaluating an attempt, signature is obligatory, must return True or False
-        def evaluate_attempt(self, attempt):
+        # you can use the keyword arguments
+        start_date = kwargs["start_date"]
+        end_date = kwargs["end_date"]
+        print("Peparing " + str(self.next_attempt) + " for start date " +  str(start_date) + " and end date " + str(end_date))
+        
+        # copy some prepared files to the actual input file
+        input_nml = self.root + "/input/MOM5_Baltic/input.nml"
+        os.system("cp " + input_nml + "." + str(self.next_attempt) + " " + input_nml)
+        
+        return
 
-                # in this example let's provoke that the first attempt fails
-                if attempt == self.attempts[0]:
-                        return False
+    def evaluate_attempt(self, crashed, **kwargs):
+        r"""
+        Mandatory method to evaluate the attempt.
+        
+        In this method the setting of the next_attempt should typically happen, e.g. incrementation.
+        Important: If all attempts are exhausted, next_attempt must be set tot `None`.
+        Important: If model has crashed, this function should return False otherwise following steps are ill-defined.
 
-                # let the second attempt succeed if file from preparation has been created
-                if attempt == self.attempts[1]:
-                        if glob.glob(self.root + "/attempt2.txt") != []:
-                                return True
+        :param crashed:         `True`, if the model has crashed, `False`, otherwise
+        :type crashed:          bool   
 
-                return True
+        :Keyword Arguments:
+        
+        * **start_date** (*int*) --
+          Start date of the current job in format YYYMMDD
+        * **end_date** (*int*) --
+          End date of the current job in format YYYMMDD          
+
+        :return:                `True`, if attempt is accepted (work will be copied to output, hotstart folder is created), `False`, if attempt is not accepted (work will not be copied to output, no hotstart folder is created)      
+        :rtype:                 bool
+        """ 
+
+        # you can use the keyword arguments
+        start_date = kwargs["start_date"]
+        end_date = kwargs["end_date"]
+        print("Evaluating " + str(self.next_attempt) + " for start date " +  str(start_date) + " and end date " + str(end_date))
+
+        # if the model has crashed, react here
+        if crashed:
+            
+            # we have no attempts left, we should stop here
+            if self.next_attempt == self.max_attempts:
+                self.next_attempt = None
+                return False
+            
+            # there are attempts left, go to the next set of input files 
+            self.next_attempt += 1
+            # throw away work of failed attempt (you might also store it somewhere for debugging)
+            return False
+            
+        # if the model did succeed, we can go back to the previous input files
+        if self.next_attempt > 1:
+            self.next_attempt -= 1                
+            
+        return True
 ```
 
 Read the comments in this code and understand what is happening.
-This dummy example handles two attempts called `"1"` and `"2"`, see member `attempts`.
+This MOM5-specific example handles 4 attempts related to some prepared input files `input/MOM5_Baltic/input.nml.1` to `input/MOM5_Baltic/input.nml.4`.
 While creation, the object gets an additional member for memorizing the root path of the project. 
 However you can pass arbitrary arguments to the constructor.
-The example class does nothing to prepare the first attempt but creates an empty file for the second attempt, see the `prepare_attempt` method.
-It is further constructed such that the first attempt will always fail and the second succeeds only if the empty file has been created, `evaluate_attempt` method.
+For the first attempt, the example class copies the prepared input file `input/MOM5_Baltic/input.nml.1` to the actually used input file `input/MOM5_Baltic/input.nml`, see the `prepare_attempt` method.
+If the run fails (`crashed = True` in the `evaluate_attempt` method) with this input file, we will go to the next attempt (`self.next_attempt += 1`) and the next time `prepare_attempt`is called we will use the input file `input/MOM5_Baltic/input.nml.2`.
+If this attempt succeeds we will go back to the previous attempt (`self.next_attempt -= 1`), i.e. to the input file `input/MOM5_Baltic/input.nml.1`.
+If a run failed 4 time in a row (`self.next_attempt == self.max_attempts`) all attempts are exhasuted and we stop (`self.next_attempt = None`).
 
 Of course for your application you have to implement your own functionality according to your needs.
 
-## 2a. Extension
-
-The `evaluate_attempt` method may also have two arguments. The `crashed` argument will be `True` or `False` if the model has technically crashed or not, respectively. 
-
-```python
-        def evaluate_attempt(self, attempt, crashed):
-        
-                # recognize crash (and possibly react) but allow model to rerun within the same attempt
-                if crashed:
-                        os.system("touch " + self.root + "/attempt_" + attempt + "_crashed.txt")
-                        return True
-                    
-                # in this example let's provoke that the first attempt fails
-                if attempt == self.attempts[0]:
-                        return False
-
-                # let the second attempt succeed if file from preparation has been created
-                if attempt == self.attempts[1]:
-                        if glob.glob(self.root + "/attempt2.txt") != []:
-                                return True
-
-                return True
-```
-
-This allows you to react to crashes very individually.
 
 ## 3. Register your attempt handler
 
@@ -120,59 +159,15 @@ attempt_handler = my_attempt_handling.MyAttemptHandler("/path/to/IOW_ESM")      
 
 Again the name `my_attempt_handling`, `MyAttemptHandler` as well as the path `"/path/to/IOW_ESM"` might be different for you.
 
+
 ## 4. How the IOW ESM calls the attempt handler 
-
-The IOW ESM will call the attempt handler such that it iterates over the entries in `attempt_handler.attempts`. It will stay within an attempt until the  `evaluate_attempt` method returns `False`. Then it will go to the next attempt until the last attempt is exhausted. If the `evaluate_attempt` method takes only one argument, a crash of the model will also lead to the next attempt.
-
-The corresponding code from `scripts/run/run.py` looks like:
-
-``` python
-for run in range(runs_per_job):
-        
-    # get next attempt from the file specified in member last_attempt_file (done by an attempt_iterator object)
-    attempt = attempt_iterator.get_next_attempt()
-
-    # PREPARATION
-    # prepare the attempt
-    attempt_handler.prepare_attempt(attempt)
-
-    # perform attempt
-    # ...
-    # set crashed = True if the model crashed
-
-    # EVALUATION
-    # either:
-    # if the evaluate_attempt method takes one arguments, the call looks like
-    if not crashed:
-        # if the run did not crash, still check for evaluation
-        run_failed = not attempt_handler.evaluate_attempt(attempt)
-    else:
-        run_failed = True
-    
-    # or:
-    # if the evaluate_attempt method takes two arguments, the call looks like
-    run_failed = not attempt_handler.evaluate_attempt(attempt, crashed)
-    
-    # something went wrong: either model has crashed or the attempt has not passed the criterion 
-    if run_failed:
-        # if this was the final attempt, we stop here
-        if attempt == attempt_handler.attempts[-1]:
-            print('IOW_ESM job finally failed integration from '+str(start_date)+' to '+str(end_date))
-            sys.exit()
-
-        # if it was not the final attempt, memorize this attempt (done by an attempt_iterator object)
-        attempt_iterator.store_last_attempt(attempt)
-        
-        # go on with next attempt in a new job
-        print('  attempt '+str(attempt)+' failed. Go on with next attempt.', flush=True)
-        os.system("cd " + IOW_ESM_ROOT + "/scripts/run; " + resubmit_command)
-        sys.exit()
-
-```
 
 **Important**
 * the preparation takes place _before_ the input files are copied to the local work directories
 * the evaluation takes place _after_ the output is copied to the global `work` directory but _before_ it is stored in the `output` directory
+* if the evaluation returns `True` the content of `work` is copied to `output` and hotstart files are also copied to the `hotstart` directory, thus the run is assumed to be valid and the next run starts from these hotstart files
+* if the evaluation return `False` nor output neither hotstart files are copied and thus this run is assumed to be invalid and the next run will start from the last available hotstart files
+* evaluating with `True` while `crashed = True` will yield an error and the model is aborted (a crashed run cannot be successful!)
 
 In other words you best prepare your attempt in the `input` directory and evaluate it in the global `work` directory.
 

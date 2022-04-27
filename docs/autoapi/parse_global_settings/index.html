@@ -251,10 +251,10 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../attempt_handling/index.html">
+    <a class="reference internal" href="../attempt_handler_example/index.html">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
-       attempt_handling
+       attempt_handler_example
       </span>
      </code>
     </a>
@@ -503,6 +503,18 @@ const thebe_selector_output = ".output, .cell_output"
       <a class="reference internal nav-link" href="#parse_global_settings.GlobalSettings">
        GlobalSettings
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#parse_global_settings.GlobalSettings.serialize_attempt_handler">
+         serialize_attempt_handler
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#parse_global_settings.GlobalSettings.deserialize_attempt_handler">
+         deserialize_attempt_handler
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -542,6 +554,18 @@ const thebe_selector_output = ".output, .cell_output"
       <a class="reference internal nav-link" href="#parse_global_settings.GlobalSettings">
        GlobalSettings
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#parse_global_settings.GlobalSettings.serialize_attempt_handler">
+         serialize_attempt_handler
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#parse_global_settings.GlobalSettings.deserialize_attempt_handler">
+         deserialize_attempt_handler
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -569,14 +593,43 @@ const thebe_selector_output = ".output, .cell_output"
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#parse_global_settings.GlobalSettings" title="parse_global_settings.GlobalSettings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GlobalSettings</span></code></a></p></td>
-<td><p></p></td>
+<td><p>Class that contains the variables of global_settings.py as attributes.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="parse_global_settings.GlobalSettings">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">parse_global_settings.</span></span><span class="sig-name descname"><span class="pre">GlobalSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'input/global_settings.py'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parse_global_settings.GlobalSettings" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Class that contains the variables of global_settings.py as attributes.</p>
+<p>Attributes will be all that are present in global_settings.py.</p>
+<p>Additionally there will be <cite>root_dir</cite> which is the memorized path of root directory and
+<cite>attempt_handler_obj_file</cite>. The latter is the file which is used to serialize the current state of the attempt_handler attribute.
+IMPORTANT: If you want to start from scratch, you have to remove this file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root_dir</strong> (<em>str</em>) – Path to the root directory</p></li>
+<li><p><strong>global_settings</strong> (<em>str</em>) – Path to the global_settings.py file, relative to root_dir, default “input/global_settings.py”</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="parse_global_settings.GlobalSettings.serialize_attempt_handler">
+<span class="sig-name descname"><span class="pre">serialize_attempt_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parse_global_settings.GlobalSettings.serialize_attempt_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serializes the attempt_handler object into a binary file.</p>
+<p>This function is used to store the state of the attempt_handler object at the end of a run.
+Such it can be restored when starting a new run.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="parse_global_settings.GlobalSettings.deserialize_attempt_handler">
+<span class="sig-name descname"><span class="pre">deserialize_attempt_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parse_global_settings.GlobalSettings.deserialize_attempt_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deserializes the attempt_handler object from a binary file.</p>
+<p>If a file named as attempt_handler_obj_file exists, the attempt_handler object is restore from that.
+If there is not such a file, nothing is done here and the attempt_handler object is initialized as implemented in its contructor.</p>
+</dd></dl>
+
+</dd></dl>
 
 </div>
 </div>

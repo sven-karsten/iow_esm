@@ -11,7 +11,7 @@ This page contains auto-generated API reference documentation [#f1]_.
    /autoapi/grid_create_maskfile_CCLM/index
    /autoapi/grid_create_uv_t_regridding/index
    /autoapi/mapping_helper_functions/index
-   /autoapi/attempt_handling/index
+   /autoapi/attempt_handler_example/index
    /autoapi/change_in_namelist/index
    /autoapi/create_namcouple/index
    /autoapi/create_work_directories/index

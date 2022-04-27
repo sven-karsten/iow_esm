@@ -5,6 +5,8 @@ The jobscript template is a template for the script that is submitted/executed t
 In order to adapt it to your needs you will most probably modify the example templates in the example setups.
 However, certain lines should not be changed.
 
+Which template file you use is specified in the file `global_settings.py`, see [](usage:setting_up_global_settings).
+
 ## Jobscript templates for the slurm queuing system
 
 ### Personal adaptions
