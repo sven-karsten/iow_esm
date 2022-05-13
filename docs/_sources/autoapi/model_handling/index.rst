@@ -13,6 +13,7 @@ Classes
 .. autoapisummary::
 
    model_handling.ModelTypes
+   model_handling.GridTypes
    model_handling.ModelHandlerBase
 
 
@@ -63,6 +64,24 @@ Functions
 
 
 
+.. py:class:: GridTypes
+
+   .. py:attribute:: t_grid
+      :annotation: = t_grid
+
+      
+
+   .. py:attribute:: u_grid
+      :annotation: = u_grid
+
+      
+
+   .. py:attribute:: v_grid
+      :annotation: = v_grid
+
+      
+
+
 .. py:function:: get_model_handler(global_settings, model)
 
    Method to get a single model handler.
@@ -95,7 +114,7 @@ Functions
    :rtype:                         dict    
 
 
-.. py:class:: ModelHandlerBase(model_type, global_settings, my_directory)
+.. py:class:: ModelHandlerBase(model_type, global_settings, my_directory, grids=[GridTypes.t_grid])
 
    Base class for all specific model handler.
 

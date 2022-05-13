@@ -136,4 +136,7 @@ Classes
       :rtype:                         int    
 
 
+   .. py:method:: get_domain_decomposition(self)
+
+
 

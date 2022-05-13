@@ -8,6 +8,34 @@ on your target machine.
 It consists of the following sections.
 
 
+## Specify the machine you are workin on
+
+Here you have to specifiy on which machine you are working.
+This section might look like:
+
+``` python
+####################################################
+# Global settings for the IOW-ESM model run        #
+####################################################
+
+##################################
+# STEP 0: specify the machine    #
+##################################
+
+machine = "hlrn"        # this will ensure that the correct MPI variant is used and the correct queueing system if present
+```
+
+This ensures that MPI (Intel-MPI or OpenMPI) and the queueing system (if present) are correctly used.
+
+Currently available machine keywords are 
+
+* `hlrn` for the two HLRN clusters in Göttingen and Berlin
+* `haumea` for the Uni Rostock's cluster
+
+According to your setting one of the `scripts/run/machine_settings_*.py` is loaded. 
+If you want to overwrite some of the predefined settings you can set the variable explicitely in the global settings.
+
+
 ## Modeller's information
 
 The modeller's section contains your personal information.
@@ -16,11 +44,6 @@ Some of these information can be found later on in some output files, such that 
 This section might look like:
 
 ``` python
-
-####################################################
-# Global settings for the IOW-ESM model run        #
-####################################################
-
 ###################################
 # STEP 1: Info about the modeller #
 ###################################

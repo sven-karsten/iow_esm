@@ -17,3 +17,7 @@ In general the name has to be `start_build_` followed by the keyword and `.sh`.
 On some targets the build is performed using the queuing system on others it can be performed on directly the login node.
 Find out which is true for your new target.
 The existing `start_build_haumea.sh` is an example for using the queue, whereas `start_build_hlrng.sh` is an example for direct compilation on the login node.
+
+4. Add a machine settings python module `machine_settings_new_target.py` to the directory `scripts/run`.
+Here you have to specify how MPI and the queueing system are used on the new target.
+As a template you can use the examples `machine_settings_hlrn.py` (Intel-MPI + SLURM) and `machine_settings_haumea.py` (OpenMPI+SLURM).

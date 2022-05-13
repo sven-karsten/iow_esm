@@ -11,6 +11,8 @@ This page contains auto-generated API reference documentation [#f1]_.
    /autoapi/grid_create_maskfile_CCLM/index
    /autoapi/grid_create_uv_t_regridding/index
    /autoapi/mapping_helper_functions/index
+   /autoapi/parallelize_mappings/index
+   /autoapi/parallelize_mappings_helpers/index
    /autoapi/attempt_handler_example/index
    /autoapi/change_in_namelist/index
    /autoapi/create_namcouple/index
@@ -18,6 +20,8 @@ This page contains auto-generated API reference documentation [#f1]_.
    /autoapi/date_calculations/index
    /autoapi/get_run_information/index
    /autoapi/hotstart_handling/index
+   /autoapi/machine_settings_haumea/index
+   /autoapi/machine_settings_hlrn/index
    /autoapi/model_handling/index
    /autoapi/model_handling_CCLM/index
    /autoapi/model_handling_flux/index
@@ -25,5 +29,6 @@ This page contains auto-generated API reference documentation [#f1]_.
    /autoapi/model_handling_MOM5/index
    /autoapi/parse_global_settings/index
    /autoapi/postprocess_handling/index
+   /autoapi/run_helpers/index
 
 .. [#f1] Created with `sphinx-autoapi <https://github.com/readthedocs/sphinx-autoapi>`_

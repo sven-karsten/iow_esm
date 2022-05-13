@@ -12,12 +12,36 @@ Classes
 
 .. autoapisummary::
 
+   model_handling_flux.FluxCalculatorModes
    model_handling_flux.ModelHandler
 
 
 
 
-.. py:class:: ModelHandler(global_settings, my_directory)
+.. py:class:: FluxCalculatorModes
+
+   .. py:attribute:: single_core
+      :annotation: = single_core_per_bottom_model
+
+      
+
+   .. py:attribute:: on_bottom_cores
+      :annotation: = on_bottom_model_cores
+
+      
+
+   .. py:attribute:: on_extra_cores
+      :annotation: = on_extra_cores
+
+      
+
+   .. py:attribute:: none
+      :annotation: = none
+
+      
+
+
+.. py:class:: ModelHandler(global_settings, my_directory, model_handlers={})
 
    Bases: :py:obj:`model_handling.ModelHandlerBase`
 
@@ -34,8 +58,9 @@ Classes
    :param my_directory:            Name of the model's input folder, usually model_domain, e.g. MOM5_Baltic. IMPORTANT: model names can only have four letters as e.g. MOM5, CCLM, GETM etc.
    :type my_directory:             str
                                    
-   :param model_type:              Must be one of attributes of class `ModelTypes`
-   :type model_type:               str
+   :param model_handlers:          Dictionary with model handlers of other models that are coupled to the flux calculator. The keys are the directory names of the other models.
+                                   Default: {} must be present to be created in the `model_handling.get_model_handler` method. 
+   :type model_type:               dict {str : class:`ModelHandler`}
 
    .. py:method:: create_work_directory(self, work_directory_root, start_date, end_date)
 
@@ -86,6 +111,9 @@ Classes
                                       
       :return:                        Number of used threads
       :rtype:                         int    
+
+
+   .. py:method:: get_my_threads(self)
 
 
 

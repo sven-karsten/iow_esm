@@ -42,7 +42,7 @@ these diffrences are logged within that file.
 By executing the run script later on, the same tagging will be done for the main repository and this file is transferred to the destination.
 That way, you can always identify with which version of the code your working on the target. 
 
-
+(usage:advanced_use:running_during_development)=
 ## Running during development
 
 
