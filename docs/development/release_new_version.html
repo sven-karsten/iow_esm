@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create forcings for the CCLM model with int2lm &#8212; IOW Earth system model</title>
+    <title>Release of a new version &#8212; IOW Earth system model</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Create a new postprocess task" href="create_postprocess_task.html" />
-    <link rel="prev" title="Automatic postprocessing" href="automatic_postprocessing.html" />
+    <link rel="next" title="Testing the model" href="testing.html" />
+    <link rel="prev" title="Add a new model" href="new_model.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -125,34 +125,34 @@ const thebe_selector_output = ".output, .cell_output"
   development
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../development/design_concept.html">
+  <a class="reference internal" href="design_concept.html">
    Design and concept
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../development/extend_documentation.html">
+  <a class="reference internal" href="extend_documentation.html">
    Extend the documentation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../development/new_destinations.html">
+  <a class="reference internal" href="new_destinations.html">
    Enable new destinations
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../development/new_model.html">
+  <a class="reference internal" href="new_model.html">
    Add a new model
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../development/release_new_version.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Release of a new version
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../development/testing.html">
+  <a class="reference internal" href="testing.html">
    Testing the model
   </a>
  </li>
@@ -162,44 +162,44 @@ const thebe_selector_output = ".output, .cell_output"
   usage
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="advanced_use.html">
+  <a class="reference internal" href="../usage/advanced_use.html">
    Advanced use
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="attempt_handling.html">
+  <a class="reference internal" href="../usage/attempt_handling.html">
    Attempt handling
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="automatic_postprocessing.html">
+  <a class="reference internal" href="../usage/automatic_postprocessing.html">
    Automatic postprocessing
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/create_forcings_for_CCLM.html">
    Create forcings for the CCLM model with int2lm
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="create_postprocess_task.html">
+  <a class="reference internal" href="../usage/create_postprocess_task.html">
    Create a new postprocess task
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="parallelize_flux_calculator.html">
+  <a class="reference internal" href="../usage/parallelize_flux_calculator.html">
    Parallelize the flux calulator
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="setting_up_global_settings.html">
+  <a class="reference internal" href="../usage/setting_up_global_settings.html">
    Setting up the global_settings.py
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="setting_up_jobscript.html">
+  <a class="reference internal" href="../usage/setting_up_jobscript.html">
    Setting up your jobscript template
   </a>
  </li>
@@ -503,7 +503,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/usage/create_forcings_for_CCLM.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/development/release_new_version.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -523,7 +523,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://git.io-warnemuende.de/iow_esm/main/issues/new?title=Issue%20on%20page%20%2Fusage/create_forcings_for_CCLM.html&body=Your%20issue%20content%20here."><button
+            href="https://git.io-warnemuende.de/iow_esm/main/issues/new?title=Issue%20on%20page%20%2Fdevelopment/release_new_version.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -550,41 +550,43 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#make-your-adaptions">
-   Make your adaptions
+  <a class="reference internal nav-link" href="#release-of-the-subcomponents">
+   Release of the subcomponents
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#global-settings">
-     Global settings
+    <a class="reference internal nav-link" href="#test-your-changes">
+     Test your changes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jobscript">
-     Jobscript
+    <a class="reference internal nav-link" href="#update-the-readme">
+     Update the Readme
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#local-settings">
-     Local settings
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#input-of-the-int2lm-tool">
-     Input of the int2lm tool
+    <a class="reference internal nav-link" href="#create-a-release-branch">
+     Create a release branch
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#start-the-run">
-   Start the run
+  <a class="reference internal nav-link" href="#update-the-main-repository">
+   Update the main repository
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Update the Readme
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-script-release-sh">
+     Update the script release.sh
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -596,7 +598,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Create forcings for the CCLM model with int2lm</h1>
+                <h1>Release of a new version</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -607,41 +609,43 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#make-your-adaptions">
-   Make your adaptions
+  <a class="reference internal nav-link" href="#release-of-the-subcomponents">
+   Release of the subcomponents
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#global-settings">
-     Global settings
+    <a class="reference internal nav-link" href="#test-your-changes">
+     Test your changes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jobscript">
-     Jobscript
+    <a class="reference internal nav-link" href="#update-the-readme">
+     Update the Readme
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#local-settings">
-     Local settings
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#input-of-the-int2lm-tool">
-     Input of the int2lm tool
+    <a class="reference internal nav-link" href="#create-a-release-branch">
+     Create a release branch
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#start-the-run">
-   Start the run
+  <a class="reference internal nav-link" href="#update-the-main-repository">
+   Update the main repository
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Update the Readme
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-script-release-sh">
+     Update the script release.sh
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -652,75 +656,77 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="create-forcings-for-the-cclm-model-with-int2lm">
-<h1>Create forcings for the CCLM model with int2lm<a class="headerlink" href="#create-forcings-for-the-cclm-model-with-int2lm" title="Permalink to this headline">¶</a></h1>
-<p>The int2lm tool enables creating regional forcings for the Cosmo-CLM model from coarse global model data or reanalysis data.
-See <a class="reference external" href="https://www.cosmo-model.org/content/model/documentation/core/int2lm_2.08.pdf">https://www.cosmo-model.org/content/model/documentation/core/int2lm_2.08.pdf</a> for more information and/or ask the CLM community.</p>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
-<p>Set up a destiantion (e.g. on the HLRN in Göttingen) as described in <a class="reference internal" href="../getting_started/first_use.html#getting-started-first-use"><span class="std std-ref">First use</span></a>.</p>
-<p>Note that you might only clone and build the <code class="docutils literal notranslate"><span class="pre">tools/I2LM</span></code> component for this use case.
-As a starting point you can take the example setup <code class="docutils literal notranslate"><span class="pre">I2LM_example</span></code> from the file <code class="docutils literal notranslate"><span class="pre">SETUPS.example</span></code> (or the corresponding example on your favorite target machine).</p>
-<p>This example can be used to create CCLM forcings over the Eurocordex domain on an 0.22°x0.22° grid using the ERA-Interim reanalysis data.
-If you want to do something else, you have to make some adaptions in the setup.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="release-of-a-new-version">
+<h1>Release of a new version<a class="headerlink" href="#release-of-a-new-version" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="release-of-the-subcomponents">
+<h2>Release of the subcomponents<a class="headerlink" href="#release-of-the-subcomponents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="test-your-changes">
+<h3>Test your changes<a class="headerlink" href="#test-your-changes" title="Permalink to this headline">¶</a></h3>
+<p>As soon as you have changed something be sure that these changes are working correctly.
+In the best case your changes are backward compatible and still work with older setups.
+If you introduce breaking changes it should be clearly noted in the Readme of the subcomponent and of the main repository.</p>
 </div>
-<div class="section" id="make-your-adaptions">
-<h2>Make your adaptions<a class="headerlink" href="#make-your-adaptions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="global-settings">
-<h3>Global settings<a class="headerlink" href="#global-settings" title="Permalink to this headline">¶</a></h3>
-<p>Once you set up your destination, go there and change to the <code class="docutils literal notranslate"><span class="pre">input</span></code> directory.
-Here you find the file <code class="docutils literal notranslate"><span class="pre">global_settings.py</span></code> it has the same format as for other use cases.
-How to set it up can be found in <a class="reference internal" href="setting_up_global_settings.html#usage-setting-up-global-settings"><span class="std std-ref">Setting up the global_settings.py</span></a>.</p>
-</div>
-<div class="section" id="jobscript">
-<h3>Jobscript<a class="headerlink" href="#jobscript" title="Permalink to this headline">¶</a></h3>
-<p>Follow the steps described in <a class="reference internal" href="setting_up_jobscript.html#usage-setting-up-jobscript"><span class="std std-ref">Setting up your jobscript template</span></a>.</p>
-</div>
-<div class="section" id="local-settings">
-<h3>Local settings<a class="headerlink" href="#local-settings" title="Permalink to this headline">¶</a></h3>
-<p>In the folder <code class="docutils literal notranslate"><span class="pre">input/I2LM_Eurocordex</span></code> the file <code class="docutils literal notranslate"><span class="pre">local_settings.py</span></code> can be found (note that the input folder might be renamed as <code class="docutils literal notranslate"><span class="pre">I2LM_&lt;your_domain&gt;</span></code> according to the domain you want to process).
-Here you have to modify the database from where the coarse data is taken for the interpolation.
-First, choose a file with the external fields for the CCLM run you want to perform.
-In the example setup this looks like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">####################################################</span>
-<span class="c1">#        Local settings for the int2lm run         #</span>
-<span class="c1">####################################################</span>
+<div class="section" id="update-the-readme">
+<h3>Update the Readme<a class="headerlink" href="#update-the-readme" title="Permalink to this headline">¶</a></h3>
+<p>Go to each sub compoment that has changed since the last version.
+Let’s say for subcomponent <code class="docutils literal notranslate"><span class="pre">componentA</span></code> we want to release a new version <code class="docutils literal notranslate"><span class="pre">X.XX.XX</span></code>.
+Then update the corresponding <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code> by adding a block (on top of the last version) like</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## X.XX.XX (latest release)</span>
 
-<span class="c1">###################################</span>
-<span class="c1">#         Data base               #</span>
-<span class="c1">###################################</span>
-<span class="c1"># name of the used climatology file</span>
-<span class="n">climatology_file</span> <span class="o">=</span> <span class="s2">&quot;climatology_cD3_0220.nc&quot;</span>
+| date        | author(s)   | link      |
+|---          |---          |---        |
+| YYYY-MM-DD  | AB          | [<span class="nt">X.XX.XX</span>](<span class="na">https://git.io-warnemuende.de/iow_esm/componentA/branch/X.XX.XX</span>)     | 
 
-<span class="c1"># path to the climatology file, if empty it is assumed relative to this directory</span>
-<span class="n">climatology_dir</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+&lt;details&gt;
+
+<span class="gu">### changes</span>
+<span class="k">*</span> changed something
+<span class="k">*</span> fixed this
+<span class="k">*</span> added that
+    
+<span class="gu">### dependencies</span>
+<span class="k">*</span> depends on something 
+  
+<span class="gu">### known issues</span>
+<span class="k">*</span> shows some strange behavior in case X
+
+<span class="gu">### tested with</span>
+<span class="k">*</span> intensively tested on some machine with some setup
+
+&lt;/details&gt;
 </pre></div>
 </div>
-<p>TODO: Explain where or how to get the climatology files.</p>
-<p>Second, specify where to find coarse data that will be interpolated, e.g.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># path to the coarse grid data, if empty it is assumed relative to this directory</span>
-<span class="c1"># in this directory the data should be in subdirectories called yearYYYY (e.g. year1980)</span>
-<span class="n">coarse_data_dir</span> <span class="o">=</span> <span class="s2">&quot;/scratch/usr/mviowmod/DATABASE/CCLM_FORCING/ERAI&quot;</span>
-
-<span class="c1"># prefix of the coarse data files, this might be either &quot;cas&quot; or &quot;caf&quot;</span>
-<span class="n">coarse_data_pref</span> <span class="o">=</span> <span class="s2">&quot;caf&quot;</span>
-
+<p>Here <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code> should be the current date and <code class="docutils literal notranslate"><span class="pre">AB</span></code> should be your initials.
+The link to the git repository should be pointing to the specific branch of this release.
+This branch is created in the next step.</p>
+</div>
+<div class="section" id="create-a-release-branch">
+<h3>Create a release branch<a class="headerlink" href="#create-a-release-branch" title="Permalink to this headline">¶</a></h3>
+<p>After you are sure that all your changes are in their final state, commit them (the updated <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code> as well) and create a branch named <code class="docutils literal notranslate"><span class="pre">X.XX.XX</span></code> on this commit.
+After you have pushed that branch to the repository it should be reachable via the link you have put into the Readme.</p>
+</div>
+</div>
+<div class="section" id="update-the-main-repository">
+<h2>Update the main repository<a class="headerlink" href="#update-the-main-repository" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Update the Readme<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Update the <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code> file of the main repository in the same fashion as it is described for the subcomponents.
+Note briefly the biggest changes of the subcomponents and also changes of the main repository’s scripts, if available.</p>
+<p>The next step is to commit your changes and create a branch for the new version of the main repository.
+Importantly, the creation of the branch is not done manually but rather by editing and subsequently executing the shell script <code class="docutils literal notranslate"><span class="pre">release.sh</span></code>, as described in the next section.</p>
+</div>
+<div class="section" id="update-the-script-release-sh">
+<h3>Update the script <a class="reference external" href="http://release.sh">release.sh</a><a class="headerlink" href="#update-the-script-release-sh" title="Permalink to this headline">¶</a></h3>
+<p>In the main repository there is the shell script <code class="docutils literal notranslate"><span class="pre">release.sh</span></code>.
+Here you can specify the <code class="docutils literal notranslate"><span class="pre">new_version</span></code> number of the IOW ESM, a specific <code class="docutils literal notranslate"><span class="pre">commit_message</span></code> and the <code class="docutils literal notranslate"><span class="pre">origins</span></code> with the corresponding version numbers of the subcomponents.
+After you have made your changes commit them into the master branch.
+Subsequently execute the shell script via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./release.sh
 </pre></div>
 </div>
-<p>These so-called <code class="docutils literal notranslate"><span class="pre">caf</span></code> or <code class="docutils literal notranslate"><span class="pre">cas</span></code> files can be found at the DKRZ servers for a few global models and reanalysis data, see <a class="reference external" href="https://redc.clm-community.eu/projects/data/wiki/Initial_and_Boundary_Data">https://redc.clm-community.eu/projects/data/wiki/Initial_and_Boundary_Data</a> and/or ask the CLM community.</p>
+<p>This create a branch named as the new version and commit an updated <code class="docutils literal notranslate"><span class="pre">ORIGINS</span></code> files into that branch.
+After you are sure that everything is correct, push this branch to the remote repository and the new version is released.</p>
 </div>
-<div class="section" id="input-of-the-int2lm-tool">
-<h3>Input of the int2lm tool<a class="headerlink" href="#input-of-the-int2lm-tool" title="Permalink to this headline">¶</a></h3>
-<p>The main input of the int2lm tool is the file <code class="docutils literal notranslate"><span class="pre">INPUT</span></code> in <code class="docutils literal notranslate"><span class="pre">input/I2LM_Eurocordex</span></code>.
-How to set it up correctly can be found in the original documentation <a class="reference external" href="https://www.cosmo-model.org/content/model/documentation/core/int2lm_2.08.pdf">https://www.cosmo-model.org/content/model/documentation/core/int2lm_2.08.pdf</a>.
-Importantly, variables that have the value <code class="docutils literal notranslate"><span class="pre">*auto*</span></code> in the example setup will be overwritten when the job is running and you do not have to set them manually.</p>
-</div>
-</div>
-<div class="section" id="start-the-run">
-<h2>Start the run<a class="headerlink" href="#start-the-run" title="Permalink to this headline">¶</a></h2>
-<p>The int2lm tool is started as any other model within the IOW ESM.
-So either you use the command line interface, i.e. the <code class="docutils literal notranslate"><span class="pre">run.sh</span></code> script or you can start it with the GUI by hitting <code class="docutils literal notranslate"><span class="pre">Run</span></code>.
-See also <a class="reference internal" href="../getting_started/first_use.html#getting-started-first-use"><span class="std std-ref">First use</span></a> for how to run a model.</p>
 </div>
 </div>
 
@@ -737,7 +743,7 @@ See also <a class="reference internal" href="../getting_started/first_use.html#g
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./usage"
+            path: "./development"
         },
         predefinedOutput: true
     }
@@ -749,17 +755,17 @@ See also <a class="reference internal" href="../getting_started/first_use.html#g
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="automatic_postprocessing.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="new_model.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Automatic postprocessing</p>
+            <p class="prev-next-title">Add a new model</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="create_postprocess_task.html" title="next page">
+    <a class='right-next' id="next-link" href="testing.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Create a new postprocess task</p>
+        <p class="prev-next-title">Testing the model</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
