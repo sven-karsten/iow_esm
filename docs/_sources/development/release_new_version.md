@@ -74,5 +74,5 @@ Subsequently execute the shell script via
 ./release.sh
 ```
 
-This create a branch named as the new version and commit an updated `ORIGINS` files into that branch.
+This creates a branch named as the new version and an updated `ORIGINS` file is committed into that branch.
 After you are sure that everything is correct, push this branch to the remote repository and the new version is released.
