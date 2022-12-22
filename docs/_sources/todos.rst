@@ -2,12 +2,7 @@ TODOs
 =====
 .. todo::
 
-   ./background/coupling_concept.md:18 TODO
-
-
-.. todo::
-
-   ./background/coupling_concept.md:24 TODO
+   ./background/coupling_concept.md:61 TODO
 
 .. todo::
 
