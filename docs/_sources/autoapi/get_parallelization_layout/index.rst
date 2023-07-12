@@ -17,6 +17,6 @@ Functions
 
 
 
-.. py:function:: get_parallelization_layout(IOW_ESM_ROOT)
+.. py:function:: get_parallelization_layout(global_settings)
 
 

@@ -28,6 +28,7 @@ Attributes
    machine_settings_haumea.bash_get_rank
    machine_settings_haumea.python_get_rank
    machine_settings_haumea.use_mpi_machinefile
+   machine_settings_haumea.resubmit_command
 
 
 .. py:data:: mpi_run_command
@@ -60,4 +61,9 @@ Attributes
 
 .. py:function:: get_node_list()
 
+
+.. py:data:: resubmit_command
+   :annotation: = sbatch jobscript
+
+   
 

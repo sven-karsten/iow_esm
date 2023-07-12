@@ -1,0 +1,1496 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details on individial fluxes &#8212; IOW Earth system model</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Design and concept" href="../development/design_concept.html" />
+    <link rel="prev" title="Coupling concept" href="coupling_concept.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/icon.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">IOW Earth system model</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  getting_started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started/first_use.html">
+   First use
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  background
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="coupling_concept.html">
+   Coupling concept
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Details on individial fluxes
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  development
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/design_concept.html">
+   Design and concept
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/extend_documentation.html">
+   Extend the documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/new_destinations.html">
+   Enable new destinations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/new_model.html">
+   Add a new model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/release_new_version.html">
+   Release of a new version
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/testing.html">
+   Testing the model
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  usage
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/advanced_use.html">
+   Advanced use
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/attempt_handling.html">
+   Attempt handling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/automatic_postprocessing.html">
+   Automatic postprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/automatic_synchronisation.html">
+   Automatic synchronization to another target
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/create_forcings_for_CCLM.html">
+   Create forcings for the CCLM model with int2lm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/create_postprocess_task.html">
+   Create a new postprocess task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/define_parallelization_layout.html">
+   Defining the parallelization layout
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/directory_structure.html">
+   Directory Structure of the IOW ESM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/parallelize_flux_calculator.html">
+   Parallelize the flux calulator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/prepare_input_folders.html">
+   Preparing the input folders for individual model runs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/setting_up_global_settings.html">
+   Setting up the global_settings.py
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../usage/setting_up_jobscript.html">
+   Setting up your jobscript template
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  scripts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../autoapi/index.html">
+   API Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/get_parallelization_layout/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       get_parallelization_layout
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/grids/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       grids
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/grid_create_exchangegrid/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       grid_create_exchangegrid
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/grid_create_maskfile_atmos/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       grid_create_maskfile_atmos
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/grid_create_uv_t_regridding/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       grid_create_uv_t_regridding
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/mapping_helper_functions/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       mapping_helper_functions
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/parallelize_mappings/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       parallelize_mappings
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/parallelize_mappings_helpers/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       parallelize_mappings_helpers
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/attempt_handler_example/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       attempt_handler_example
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/change_in_namelist/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       change_in_namelist
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/create_namcouple/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       create_namcouple
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/create_work_directories/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       create_work_directories
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/date_calculations/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       date_calculations
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/get_run_information/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       get_run_information
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/hotstart_handling/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       hotstart_handling
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/machine_settings_haumea/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       machine_settings_haumea
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/machine_settings_hlrn/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       machine_settings_hlrn
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/model_handling/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       model_handling
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/model_handling_CCLM/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       model_handling_CCLM
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/model_handling_flux/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       model_handling_flux
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/model_handling_I2LM/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       model_handling_I2LM
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/model_handling_MOM5/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       model_handling_MOM5
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/parse_global_settings/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       parse_global_settings
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/postprocess_handling/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       postprocess_handling
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/run_helpers/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       run_helpers
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  general
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../general/history.html">
+   Documentation history
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  todos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../todos.html">
+   TODOs
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/background/details_on_fluxes.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-of-variables-that-determine-the-fluxes">
+   List of variables that determine the fluxes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#auxiliary-variables-for-fluxes">
+   Auxiliary variables for fluxes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specific-water-vapor-content-at-sea-soil-surface">
+     Specific water vapor content (at sea/soil surface)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cosmo-clm-routine-for-specific-water-vapor-content-at-sea-ice-surface">
+       COSMO-CLM routine for specific water vapor content at sea/ice surface
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mass-fluxes">
+   Mass fluxes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaporation-condensation-mass-flux-of-water">
+     Evaporation/condensation mass flux of water
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cosmo-clm-routine-for-evaporation-condensation-mass-flux">
+       COSMO-CLM routine for evaporation/condensation mass flux
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heat-fluxes">
+   Heat fluxes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#latent-heat-flux">
+     Latent heat flux
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cosmo-clm-routine-for-latent-heat-flux-over-water">
+       COSMO-CLM routine for latent heat flux over water
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cosmo-clm-routine-for-latent-heat-flux-over-ice">
+       COSMO-CLM routine for latent heat flux over ice
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sensible-heat-flux">
+     Sensible heat flux
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cosmo-clm-routine-for-sensible-heat-flux">
+       COSMO-CLM routine for sensible heat flux
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#momentum-fluxes">
+   Momentum fluxes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upward-flux-of-horizontal-momentum">
+     Upward flux of horizontal momentum
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cosmo-clm-routine-for-eastward-momentum-flux">
+       COSMO-CLM routine for eastward momentum flux
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       COSMO-CLM routine for eastward momentum flux
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#radiation-fluxes">
+   Radiation fluxes
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Details on individial fluxes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-of-variables-that-determine-the-fluxes">
+   List of variables that determine the fluxes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#auxiliary-variables-for-fluxes">
+   Auxiliary variables for fluxes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specific-water-vapor-content-at-sea-soil-surface">
+     Specific water vapor content (at sea/soil surface)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cosmo-clm-routine-for-specific-water-vapor-content-at-sea-ice-surface">
+       COSMO-CLM routine for specific water vapor content at sea/ice surface
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mass-fluxes">
+   Mass fluxes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaporation-condensation-mass-flux-of-water">
+     Evaporation/condensation mass flux of water
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cosmo-clm-routine-for-evaporation-condensation-mass-flux">
+       COSMO-CLM routine for evaporation/condensation mass flux
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heat-fluxes">
+   Heat fluxes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#latent-heat-flux">
+     Latent heat flux
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cosmo-clm-routine-for-latent-heat-flux-over-water">
+       COSMO-CLM routine for latent heat flux over water
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cosmo-clm-routine-for-latent-heat-flux-over-ice">
+       COSMO-CLM routine for latent heat flux over ice
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sensible-heat-flux">
+     Sensible heat flux
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cosmo-clm-routine-for-sensible-heat-flux">
+       COSMO-CLM routine for sensible heat flux
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#momentum-fluxes">
+   Momentum fluxes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upward-flux-of-horizontal-momentum">
+     Upward flux of horizontal momentum
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cosmo-clm-routine-for-eastward-momentum-flux">
+       COSMO-CLM routine for eastward momentum flux
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       COSMO-CLM routine for eastward momentum flux
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#radiation-fluxes">
+   Radiation fluxes
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="details-on-individial-fluxes">
+<span id="background-details-on-fluxes"></span><h1>Details on individial fluxes<a class="headerlink" href="#details-on-individial-fluxes" title="Permalink to this headline">¶</a></h1>
+<p>This section contains physical details about the fluxes that can be calculated in the flux calculator executable.
+All fluxes are calculated positive upward, such that e.g. precipitation is always negative.</p>
+<div class="section" id="list-of-variables-that-determine-the-fluxes">
+<h2>List of variables that determine the fluxes<a class="headerlink" href="#list-of-variables-that-determine-the-fluxes" title="Permalink to this headline">¶</a></h2>
+<p>Fluxes may depend on the following variables:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>code</p></th>
+<th class="head"><p>symbol</p></th>
+<th class="head"><p>description</p></th>
+<th class="head"><p>provided by</p></th>
+<th class="head"><p>unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ALBE</p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha\)</span></p></td>
+<td><p>surface albedo</p></td>
+<td><p>ocean/land model</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>AMOI</p></td>
+<td><p><span class="math notranslate nohighlight">\(a_{moisture}\)</span></p></td>
+<td><p>turbulent diffusion coefficient for moisture</p></td>
+<td><p>atmos model</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>AMOM</p></td>
+<td><p><span class="math notranslate nohighlight">\(a_{momentum}\)</span></p></td>
+<td><p>turbulent diffusion coefficient for momentum</p></td>
+<td><p>atmos model</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(c_d\)</span></p></td>
+<td><p>specific heat capacity of dry air at constant pressure</p></td>
+<td><p>1005.0</p></td>
+<td><p>J/kg/K</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta H_v\)</span></p></td>
+<td><p>latent heat of vaporization</p></td>
+<td><p>2.501e6</p></td>
+<td><p>J/kg</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta H_f\)</span></p></td>
+<td><p>latent heat of freezing</p></td>
+<td><p>0.334e6</p></td>
+<td><p>J/kg</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta H_s\)</span></p></td>
+<td><p>latent heat of sublimation</p></td>
+<td><p>2.835e6</p></td>
+<td><p>J/kg</p></td>
+</tr>
+<tr class="row-odd"><td><p>FARE</p></td>
+<td><p><span class="math notranslate nohighlight">\(f_{area}\)</span></p></td>
+<td><p>area fraction of this bottom type (between 0 and 1)</p></td>
+<td><p>ocean/land model</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>FICE</p></td>
+<td><p><span class="math notranslate nohighlight">\(f_{ice}\)</span></p></td>
+<td><p>ice area fraction (between 0 and 1)</p></td>
+<td><p>ocean/land model</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(g\)</span></p></td>
+<td><p>graviational acceleration</p></td>
+<td><p>9.81</p></td>
+<td><p>m/s</p></td>
+</tr>
+<tr class="row-even"><td><p>PATM</p></td>
+<td><p><span class="math notranslate nohighlight">\(p_a\)</span></p></td>
+<td><p>pressure at lowest atmospheric level</p></td>
+<td><p>atmos model</p></td>
+<td><p>Pa</p></td>
+</tr>
+<tr class="row-odd"><td><p>PSUR</p></td>
+<td><p><span class="math notranslate nohighlight">\(p_s\)</span></p></td>
+<td><p>surface pressure</p></td>
+<td><p>atmos model</p></td>
+<td><p>Pa</p></td>
+</tr>
+<tr class="row-even"><td><p>QATM</p></td>
+<td><p><span class="math notranslate nohighlight">\(q_{v,a}\)</span></p></td>
+<td><p>specific water vapor content (lowest atmospheric grid cell)</p></td>
+<td><p>atmos model</p></td>
+<td><p>kg/kg</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(q_{v,s}\)</span></p></td>
+<td><p>specific water vapor content (at sea / soil surface)</p></td>
+<td><p>aux. variable</p></td>
+<td><p>kg/kg</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(R_d\)</span></p></td>
+<td><p>dry air gas constant</p></td>
+<td><p>287.05</p></td>
+<td><p>J/kg/K</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(R_v\)</span></p></td>
+<td><p>water vapor gas constant</p></td>
+<td><p>461.51</p></td>
+<td><p>J/kg/K</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sigma\)</span></p></td>
+<td><p>Stefan-Boltzmann constant</p></td>
+<td><p>5.67e-8</p></td>
+<td><p>W m<span class="math notranslate nohighlight">\(^{-2}\)</span> K<span class="math notranslate nohighlight">\(^{-4}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>TATM</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_a\)</span></p></td>
+<td><p>air temperature (lowest atmospheric grid cell)</p></td>
+<td><p>atmos model</p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-even"><td><p>TSUR</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_s\)</span></p></td>
+<td><p>surface temperature</p></td>
+<td><p>ocean/land model</p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-odd"><td><p>UATM</p></td>
+<td><p><span class="math notranslate nohighlight">\(u_a\)</span></p></td>
+<td><p>zonal velocity (lowest atmospheric grid cell)</p></td>
+<td><p>atmos model</p></td>
+<td><p>m/s</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(u_{min,evap}\)</span></p></td>
+<td><p>minimum velocity for CCLM evaporation calculation</p></td>
+<td><p>0.01</p></td>
+<td><p>m/s</p></td>
+</tr>
+<tr class="row-odd"><td><p>VATM</p></td>
+<td><p><span class="math notranslate nohighlight">\(v_a\)</span></p></td>
+<td><p>meridional velocity (lowest atmospheric grid cell)</p></td>
+<td><p>atmos model</p></td>
+<td><p>m/s</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="auxiliary-variables-for-fluxes">
+<h2>Auxiliary variables for fluxes<a class="headerlink" href="#auxiliary-variables-for-fluxes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="specific-water-vapor-content-at-sea-soil-surface">
+<h3>Specific water vapor content (at sea/soil surface)<a class="headerlink" href="#specific-water-vapor-content-at-sea-soil-surface" title="Permalink to this headline">¶</a></h3>
+<p>This auxiliary variable (<span class="math notranslate nohighlight">\(q_{v,s}\)</span>, in kg/kg) describes the specific water vapor content in the air immediately above the surface, i.e. in the logarithmic boundary layer.</p>
+<p>It is used further in the following routines:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>file</p></th>
+<th class="head"><p>routine</p></th>
+<th class="head"><p>variable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>flux calculator</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">flux_lib/mass/flux_mass_evap.F90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">flux_mass_evap_cclm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">specific_vapor_content_surface</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Here is how it is calculated:</p>
+<div class="section" id="cosmo-clm-routine-for-specific-water-vapor-content-at-sea-ice-surface">
+<h4>COSMO-CLM routine for specific water vapor content at sea/ice surface<a class="headerlink" href="#cosmo-clm-routine-for-specific-water-vapor-content-at-sea-ice-surface" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>requires</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(f_{ice}\)</span>, <span class="math notranslate nohighlight">\(p_s\)</span>, <span class="math notranslate nohighlight">\(R_d\)</span>, <span class="math notranslate nohighlight">\(R_v\)</span>, <span class="math notranslate nohighlight">\(T_s\)</span></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>source</strong></p></td>
+<td><p>COSMO-CLM subroutine <code class="docutils literal notranslate"><span class="pre">initialize_loop</span></code></p></td>
+<td><p>(<code class="docutils literal notranslate"><span class="pre">lmorg.f90</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>references</strong></p></td>
+<td><p>\cite{Lowe1977}, \cite{Murray1967}</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>calculation</strong></p></td>
+<td><p>over water / over ice:</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\: \alpha = 17.2693882 \, / \, \alpha = 21.8745584\)</span></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\: T_2 = 35.86 \, / \, T_2 = 7.66\)</span></p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>always:</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(T_1 = 273.16\)</span></p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(p_0 = 610.78\)</span></p></td>
+<td><p>Pa</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(p_{sat} = p_0 \, \exp \left( \alpha \frac{T_s - T_1}{T_s - T_2} \right)    \)</span></p></td>
+<td><p>Pa</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{q_{v,s}} = \frac{ \frac{R_d}{R_v} p_{sat}}{p_s - \left(1-\frac{R_d}{R_v}\right) p_{sat}}\)</span></p></td>
+<td><p>kg/kg</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="mass-fluxes">
+<h2>Mass fluxes<a class="headerlink" href="#mass-fluxes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="evaporation-condensation-mass-flux-of-water">
+<h3>Evaporation/condensation mass flux of water<a class="headerlink" href="#evaporation-condensation-mass-flux-of-water" title="Permalink to this headline">¶</a></h3>
+<p>The surface moisture flux (kg/m<span class="math notranslate nohighlight">\(^2\)</span>/s) is used further in the following routines:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>file</p></th>
+<th class="head"><p>routine</p></th>
+<th class="head"><p>variable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>COSMO-CLM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">src_conv_tiedtke.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">organize_conv_tiedtke</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-qvsflx</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>COSMO-CLM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">src_diagbudget.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">organize_diagbudget</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-qvsflx</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>COSMO-CLM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">src_integrals.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">check_qx_conservation</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-qvsflx</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>flux calculator</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">flux_heat_latent.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">flux_heat_latent_water</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">flux_mass_evap</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>flux calculator</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">flux_heat_latent.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">flux_heat_latent_ice</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">flux_mass_evap</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Here is how it is calculated:</p>
+<div class="section" id="cosmo-clm-routine-for-evaporation-condensation-mass-flux">
+<h4>COSMO-CLM routine for evaporation/condensation mass flux<a class="headerlink" href="#cosmo-clm-routine-for-evaporation-condensation-mass-flux" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>requires</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(a_{moisture}\)</span>, <span class="math notranslate nohighlight">\(p_s\)</span>, <span class="math notranslate nohighlight">\(q_{v,a}\)</span>, <span class="math notranslate nohighlight">\(q_{v,s}\)</span>, <span class="math notranslate nohighlight">\(R_d\)</span>, <span class="math notranslate nohighlight">\(R_v\)</span>, <span class="math notranslate nohighlight">\(T_s\)</span>, <span class="math notranslate nohighlight">\(u_a\)</span>, <span class="math notranslate nohighlight">\(u_{min,evap}\)</span>, <span class="math notranslate nohighlight">\(v_a\)</span></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>source</strong></p></td>
+<td><p>COSMO-CLM subroutine <code class="docutils literal notranslate"><span class="pre">slow_tendencies</span></code></p></td>
+<td><p>(<code class="docutils literal notranslate"><span class="pre">slow_tendencies.f90</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>calculation</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tilde{T} = T_s \left(1 + \left(\frac{R_v}{R_d}-1\right) q_{v,s} \right)\)</span></p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathrm{abs}(\vec{u}) = \sqrt{u_a^2+v_a^2}\)</span></p></td>
+<td><p>m/s</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(flux_{air} = a_{moisture} \max(\mathrm{abs}(\vec{u}),u_{min,evap}) \frac{p_s}{R_d \tilde{T}}\)</span></p></td>
+<td><p>kg m<span class="math notranslate nohighlight">\(^{-2}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{flux\_mass\_evap} = flux_{air} \cdot (q_{v,s} - q_{v,a})\)</span></p></td>
+<td><p>kg m<span class="math notranslate nohighlight">\(^{-2}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>explanation</strong></p></td>
+<td><p>First we calculate the temperature <span class="math notranslate nohighlight">\(\tilde{T}\)</span> at which dry air at the surface would show the same energy <span class="math notranslate nohighlight">\(p\cdot V\)</span> as the moist air which is there now.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>We then calculate a mass flux of air coming into contact with the surface. Evaporation is then calculated assuming that this air adjusts its water vapor content to the one at the surface.</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="heat-fluxes">
+<h2>Heat fluxes<a class="headerlink" href="#heat-fluxes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="latent-heat-flux">
+<h3>Latent heat flux<a class="headerlink" href="#latent-heat-flux" title="Permalink to this headline">¶</a></h3>
+<p>The latent heat flux (W/m<span class="math notranslate nohighlight">\(^2\)</span>) is used further in the following routines:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>file</p></th>
+<th class="head"><p>routine</p></th>
+<th class="head"><p>variable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>COSMO-CLM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">near_surface.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">near_surface</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-lhfl_s</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>COSMO-CLM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">send_fld.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">send_fld</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-lhfl_s</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>COSMO-CLM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">src_conv_ifs.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">organize_conv_ifs</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-lhfl_s</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Here is how the fluxes can be calculated:</p>
+<div class="section" id="cosmo-clm-routine-for-latent-heat-flux-over-water">
+<h4>COSMO-CLM routine for latent heat flux over water<a class="headerlink" href="#cosmo-clm-routine-for-latent-heat-flux-over-water" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>requires</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta H_v\)</span>, <code class="docutils literal notranslate"><span class="pre">flux_mass_evap</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>source</strong></p></td>
+<td><p>COSMO-CLM subroutine <code class="docutils literal notranslate"><span class="pre">slow_tendencies</span></code></p></td>
+<td><p>(<code class="docutils literal notranslate"><span class="pre">slow_tendencies.f90</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>calculation</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{flux\_heat\_latent} = \Delta H_v \cdot \mathtt{flux\_mass\_evap}\)</span></p></td>
+<td><p>J m<span class="math notranslate nohighlight">\(^{-2}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cosmo-clm-routine-for-latent-heat-flux-over-ice">
+<h4>COSMO-CLM routine for latent heat flux over ice<a class="headerlink" href="#cosmo-clm-routine-for-latent-heat-flux-over-ice" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>requires</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta H_v\)</span>, <code class="docutils literal notranslate"><span class="pre">flux_mass_evap</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>source</strong></p></td>
+<td><p>COSMO-CLM subroutine <code class="docutils literal notranslate"><span class="pre">slow_tendencies</span></code></p></td>
+<td><p>(<code class="docutils literal notranslate"><span class="pre">slow_tendencies.f90</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>calculation</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{flux\_heat\_latent} = \Delta H_s \cdot \mathtt{flux\_mass\_evap}\)</span></p></td>
+<td><p>J m<span class="math notranslate nohighlight">\(^{-2}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="sensible-heat-flux">
+<h3>Sensible heat flux<a class="headerlink" href="#sensible-heat-flux" title="Permalink to this headline">¶</a></h3>
+<p>The sensible heat flux (W/m<span class="math notranslate nohighlight">\(^2\)</span>) is used further in the following routines:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>file</p></th>
+<th class="head"><p>routine</p></th>
+<th class="head"><p>variable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>COSMO-CLM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">near_surface.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">near_surface</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-shfl_s</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>COSMO-CLM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">send_fld.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">send_fld</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-shfl_s</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>COSMO-CLM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">src_conv_ifs.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">organize_conv_ifs</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-shfl_s</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Here is how the fluxes can be calculated:</p>
+<div class="section" id="cosmo-clm-routine-for-sensible-heat-flux">
+<h4>COSMO-CLM routine for sensible heat flux<a class="headerlink" href="#cosmo-clm-routine-for-sensible-heat-flux" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>requires</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(a_{moisture}\)</span>, <span class="math notranslate nohighlight">\(p_a\)</span>, <span class="math notranslate nohighlight">\(p_s\)</span>, <span class="math notranslate nohighlight">\(q_{v,s}\)</span>, <span class="math notranslate nohighlight">\(R_d\)</span>, <span class="math notranslate nohighlight">\(R_v\)</span>, <span class="math notranslate nohighlight">\(T_s\)</span>, <span class="math notranslate nohighlight">\(u_a\)</span>, <span class="math notranslate nohighlight">\(u_{min,evap}\)</span>, <span class="math notranslate nohighlight">\(v_a\)</span></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>source</strong></p></td>
+<td><p>COSMO-CLM subroutine <code class="docutils literal notranslate"><span class="pre">slow_tendencies</span></code></p></td>
+<td><p>(<code class="docutils literal notranslate"><span class="pre">slow_tendencies.f90</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>calculation</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tilde{T} = T_s \left(1 + \left(\frac{R_v}{R_d}-1\right) q_{v,s} \right)\)</span></p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathrm{abs}(\vec{u}) = \sqrt{u_a^2+v_a^2}\)</span></p></td>
+<td><p>m/s</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(flux_{air} = a_{moisture} \max(\mathrm{abs}(\vec{u}),u_{min,evap}) \frac{p_s}{R_d \tilde{T}}\)</span></p></td>
+<td><p>kg m<span class="math notranslate nohighlight">\(^{-2}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\( EF = \left(\frac{p_s}{p_a}\right)^\frac{R_d}{cp_d}\)</span></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{flux\_heat\_sensible} = flux_{air} \cdot cp_d \cdot \left(T_g - T_a \cdot EF \right)\)</span></p></td>
+<td><p>kg m<span class="math notranslate nohighlight">\(^{-2}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>explanation</strong></p></td>
+<td><p>The first part until <span class="math notranslate nohighlight">\(flux_{air}\)</span> is identical to the CCLM mass flux of evaporation.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(EF\)</span> is the Exner function which calculates the ratio <span class="math notranslate nohighlight">\(T/\theta\)</span> between local temperature at local pressure and potential temperature at a reference pressure. In the original routine two Exner factors were calculated for pressure in the lowest atmospheric level and surface pressure, each with a reference pressure of 1e5~Pa, and divided by each other, here the procedure is simplified. The Exner factor <span class="math notranslate nohighlight">\(EF\)</span> converts the temperature of the lowest atmospheric level <span class="math notranslate nohighlight">\(T_a\)</span> to temperature at the surface.</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="momentum-fluxes">
+<h2>Momentum fluxes<a class="headerlink" href="#momentum-fluxes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="upward-flux-of-horizontal-momentum">
+<h3>Upward flux of horizontal momentum<a class="headerlink" href="#upward-flux-of-horizontal-momentum" title="Permalink to this headline">¶</a></h3>
+<p>The upward flux of horizontal momentum (=shear stress, N/m<span class="math notranslate nohighlight">\(^2\)</span>) is used further in the following routines:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>file</p></th>
+<th class="head"><p>routine</p></th>
+<th class="head"><p>variable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>COSMO-CLM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">near_surface.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">near_surface</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-umfl_s</span></code>, <code class="docutils literal notranslate"><span class="pre">-vmfl_s</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>COSMO-CLM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">send_fld.f90</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">send_fld</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-umfl_s</span></code>, <code class="docutils literal notranslate"><span class="pre">-vmfl_s</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Here is how it is calculated:</p>
+<div class="section" id="cosmo-clm-routine-for-eastward-momentum-flux">
+<h4>COSMO-CLM routine for eastward momentum flux<a class="headerlink" href="#cosmo-clm-routine-for-eastward-momentum-flux" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>requires</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(a_{momentum}\)</span>, <span class="math notranslate nohighlight">\(p_s\)</span>, <span class="math notranslate nohighlight">\(q_{v,s}\)</span>, <span class="math notranslate nohighlight">\(R_d\)</span>, <span class="math notranslate nohighlight">\(R_v\)</span>, <span class="math notranslate nohighlight">\(T_s\)</span>, <span class="math notranslate nohighlight">\(u_a\)</span>, <span class="math notranslate nohighlight">\(v_a\)</span></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>source</strong></p></td>
+<td><p>COSMO-CLM subroutine <code class="docutils literal notranslate"><span class="pre">slow_tendencies</span></code></p></td>
+<td><p>(<code class="docutils literal notranslate"><span class="pre">slow_tendencies.f90</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>calculation</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tilde{T} = T_s \left(1 + \left(\frac{R_v}{R_d}-1\right) q_{v,s} \right)\)</span></p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathrm{abs}(\vec{u}) = \sqrt{u_a^2+v_a^2}\)</span></p></td>
+<td><p>m/s</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(flux_{air} = a_{momentum} \mathrm{abs}(\vec{u}) \frac{p_s}{R_d \tilde{T}}\)</span></p></td>
+<td><p>kg m<span class="math notranslate nohighlight">\(^{-2}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\( EF = \left(\frac{p_s}{p_a}\right)^\frac{R_d}{cp_d}\)</span></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{flux\_momentum\_east} = - flux_{air} \cdot u_a\)</span></p></td>
+<td><p>kg m<span class="math notranslate nohighlight">\(^{-1}\)</span> s<span class="math notranslate nohighlight">\(^{-2}\)</span>=N/m<span class="math notranslate nohighlight">\(^2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>explanation</strong></p></td>
+<td><p>First we calculate the temperature <span class="math notranslate nohighlight">\(\tilde{T}\)</span> at which dry air at the surface would show the same energy <span class="math notranslate nohighlight">\(p\cdot V\)</span> as the moist air which is there now.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>We then calculate a mass flux of air coming into contact with the surface.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Momentum transfer is then calculated assuming that this air passes all its horizontal momentum to the surface.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Horizontal movement of the surface (water currents) is neglected.</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id1">
+<h4>COSMO-CLM routine for eastward momentum flux<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Calculation is completely analog to the previous one.</p>
+</div>
+</div>
+</div>
+<div class="section" id="radiation-fluxes">
+<h2>Radiation fluxes<a class="headerlink" href="#radiation-fluxes" title="Permalink to this headline">¶</a></h2>
+<p>Just like precipitation fluxes, radiation fluxes are calculated by the atmospheric model on the atmospheric grid. Unlike precipitation, they do however vary between different bottom model cells with a different temperature and albedo.
+We will outline here how this redistribution works.</p>
+<p>Two types of radiation are distinguished by their wavelength, which are shortwave and longwave radiation.
+For each of these types, each bottom grid cell can have one albedo value, or possibly several different ones e.g. for different ice classes which share the area of the ocean grid cell.
+The average albedo for the atmospheric grid cell <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(\alpha^a_i\)</span>, can therefore be calculated as follows:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{aligned}
+  \alpha^a_{i,shortwave} &amp;= \sum\limits_{m=1}^M \sum\limits_{j=1}^{B_m} \frac{\left| g^a_i \tilde{\cap} g^{b,m}_j \right|}{\left| g^a_i \right|} \sum\limits_{c=1}^{C_m} \alpha^{b,m}_{c,shortwave} \cdot f^{b,m}_c(j) \\
+	\alpha^a_{i,longwave} &amp;= \sum\limits_{m=1}^M \sum\limits_{j=1}^{B_m} \frac{\left| g^a_i \tilde{\cap} g^{b,m}_j \right|}{\left| g^a_i \right|} \sum\limits_{c=1}^{C_m} \alpha^{b,m}_{c,longwave} \cdot f^{b,m}_c(j)
+\end{aligned}
+\)</span></p>
+<p>Here, <span class="math notranslate nohighlight">\(m\)</span> is the index of the bottom model chosen,
+<span class="math notranslate nohighlight">\(j\)</span> is its grid cell index,
+the numerator in the fraction gives the area of intersection between atmospheric and bottom model grid cells where they are bidirectionally coupled,
+the denominator normalizes this area to the full area of the atmospheric grid cell,
+<span class="math notranslate nohighlight">\(c\)</span> is the class index (=ice class, soil type) used in bottom model <span class="math notranslate nohighlight">\(m\)</span>,
+<span class="math notranslate nohighlight">\(\alpha^{b,m}_{c}\)</span> is the albedo defined for this class in the bottom model, and<br />
+<span class="math notranslate nohighlight">\(f^{b,m}_c(j)\)</span> is the area fraction of the bottom grid cell covered by this class.</p>
+<p>Black-body radiation is emitted from the surface according to its temperature and longwave albedo and can be calculated with the help of the Stefan-Boltzmann constant <span class="math notranslate nohighlight">\(\sigma\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(bbr = (1-\alpha_{longwave}) \sigma T^4\)</span></p>
+<p>A similar horizontal averaging gives an average value for the atmospheric grid cell:</p>
+<p><span class="math notranslate nohighlight">\(
+bbr^a_{i,longwave} = \sum\limits_{m=1}^M \sum\limits_{j=1}^{B_m} \frac{\left| g^a_i \tilde{\cap} g^{b,m}_j \right|}{\left| g^a_i \right|} \sum\limits_{c=1}^{C_m} \left(1-\alpha^{b,m}_{c,longwave} \right) f^{b,m}_c(j) \sigma \left(T^{b,m}(j)\right)^4 
+\)</span></p>
+<p>From this value, we can calculate an effective radiative bottom temperature for the atmospheric grid cell:</p>
+<p><span class="math notranslate nohighlight">\(
+T^a_{i,longwave} = \sqrt[4]{\frac{bbr^a_{i,longwave}}{(1-\alpha^a_{i,longwave}) \sigma}}
+\)</span></p>
+<p>We use this temperature for the radiative flux calculation to make sure the emitted black-body radiation is exact.</p>
+<p>After calculating the downward radiative fluxes (both shortwave and longwave) by the atmospheric model, we pass these to the flux calculator. The flux calculator will then calculate the upward radiative fluxes on the exchange grid, using the spatially detailed information on albedo and surface temperature. This procedure ensures that also the average upward fluxes over the atmospheric grid cell are exactly identical between (a) the flux calculator and (b) the atmospheric model which calculate them independently.
+In practice, it works like this:</p>
+<ul class="simple">
+<li><p>Bottom models send surface temperature.</p></li>
+<li><p>flux calculator calculates and sends blackbody radiation.</p></li>
+<li><p>CCLM receives surface temperature and blackbody radiation in <br>
+<code class="docutils literal notranslate"><span class="pre">lmorg</span> <span class="pre">-&gt;</span> <span class="pre">initialize_loop</span> <span class="pre">-&gt;</span> <span class="pre">receive_fld</span></code></p></li>
+<li><p>CCLM calculates all radiation components in <br>
+<code class="docutils literal notranslate"><span class="pre">lmorg</span> <span class="pre">-&gt;</span> <span class="pre">organize_physics('compute',...)</span> <span class="pre">-&gt;</span> <span class="pre">organize_radiation</span></code></p></li>
+<li><p>CCLM sends radiation fluxes and other variables in <br>
+<code class="docutils literal notranslate"><span class="pre">lmorg</span> <span class="pre">-&gt;</span> <span class="pre">organize_physics('compute',...)</span> <span class="pre">-&gt;</span> <span class="pre">communicate_with_flux_calculator</span></code></p></li>
+<li><p>flux calculator calculates and sends all other fluxes.</p></li>
+<li><p>CCLM receives these fluxes in the same routine.</p></li>
+<li><p>Bottom models receive all fluxes.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./background"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="coupling_concept.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Coupling concept</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../development/design_concept.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Design and concept</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Sven Karsten<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

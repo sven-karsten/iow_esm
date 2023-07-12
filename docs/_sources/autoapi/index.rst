@@ -7,8 +7,9 @@ This page contains auto-generated API reference documentation [#f1]_.
    :titlesonly:
 
    /autoapi/get_parallelization_layout/index
-   /autoapi/grid_create_exchangegrid_MOM5/index
-   /autoapi/grid_create_maskfile_CCLM/index
+   /autoapi/grids/index
+   /autoapi/grid_create_exchangegrid/index
+   /autoapi/grid_create_maskfile_atmos/index
    /autoapi/grid_create_uv_t_regridding/index
    /autoapi/mapping_helper_functions/index
    /autoapi/parallelize_mappings/index

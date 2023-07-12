@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preparing the input folders for individual model runs &#8212; IOW Earth system model</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Setting up the global_settings.py" href="setting_up_global_settings.html" />
+    <link rel="prev" title="Parallelize the flux calulator" href="parallelize_flux_calculator.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/icon.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">IOW Earth system model</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  getting_started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started/first_use.html">
+   First use
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  background
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../background/coupling_concept.html">
+   Coupling concept
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../background/details_on_fluxes.html">
+   Details on individial fluxes
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  development
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/design_concept.html">
+   Design and concept
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/extend_documentation.html">
+   Extend the documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/new_destinations.html">
+   Enable new destinations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/new_model.html">
+   Add a new model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/release_new_version.html">
+   Release of a new version
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development/testing.html">
+   Testing the model
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  usage
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="advanced_use.html">
+   Advanced use
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="attempt_handling.html">
+   Attempt handling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="automatic_postprocessing.html">
+   Automatic postprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="automatic_synchronisation.html">
+   Automatic synchronization to another target
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="create_forcings_for_CCLM.html">
+   Create forcings for the CCLM model with int2lm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="create_postprocess_task.html">
+   Create a new postprocess task
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="define_parallelization_layout.html">
+   Defining the parallelization layout
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="directory_structure.html">
+   Directory Structure of the IOW ESM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="parallelize_flux_calculator.html">
+   Parallelize the flux calulator
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Preparing the input folders for individual model runs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="setting_up_global_settings.html">
+   Setting up the global_settings.py
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="setting_up_jobscript.html">
+   Setting up your jobscript template
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  scripts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../autoapi/index.html">
+   API Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/get_parallelization_layout/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       get_parallelization_layout
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/grids/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       grids
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/grid_create_exchangegrid/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       grid_create_exchangegrid
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/grid_create_maskfile_atmos/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       grid_create_maskfile_atmos
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/grid_create_uv_t_regridding/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       grid_create_uv_t_regridding
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/mapping_helper_functions/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       mapping_helper_functions
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/parallelize_mappings/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       parallelize_mappings
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/parallelize_mappings_helpers/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       parallelize_mappings_helpers
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/attempt_handler_example/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       attempt_handler_example
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/change_in_namelist/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       change_in_namelist
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/create_namcouple/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       create_namcouple
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/create_work_directories/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       create_work_directories
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/date_calculations/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       date_calculations
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/get_run_information/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       get_run_information
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/hotstart_handling/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       hotstart_handling
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/machine_settings_haumea/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       machine_settings_haumea
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/machine_settings_hlrn/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       machine_settings_hlrn
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/model_handling/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       model_handling
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/model_handling_CCLM/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       model_handling_CCLM
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/model_handling_flux/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       model_handling_flux
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/model_handling_I2LM/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       model_handling_I2LM
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/model_handling_MOM5/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       model_handling_MOM5
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/parse_global_settings/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       parse_global_settings
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/postprocess_handling/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       postprocess_handling
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../autoapi/run_helpers/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       run_helpers
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  general
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../general/history.html">
+   Documentation history
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  todos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../todos.html">
+   TODOs
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/usage/prepare_input_folders.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-remarks">
+   General remarks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expected-contents-of-the-cosmo-clm-input-directory">
+   Expected contents of the COSMO-CLM input directory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expected-contents-of-a-mom5-input-directory">
+   Expected contents of a MOM5 input directory
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Preparing the input folders for individual model runs</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-remarks">
+   General remarks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expected-contents-of-the-cosmo-clm-input-directory">
+   Expected contents of the COSMO-CLM input directory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expected-contents-of-a-mom5-input-directory">
+   Expected contents of a MOM5 input directory
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="preparing-the-input-folders-for-individual-model-runs">
+<span id="usage-prepare-input-folders"></span><h1>Preparing the input folders for individual model runs<a class="headerlink" href="#preparing-the-input-folders-for-individual-model-runs" title="Permalink to this headline">¶</a></h1>
+<p>The IOW ESM is able to run a single atmospheric model and several ocean or land models at the same time.
+For each of these sub-models, a sub-folder in the input directory has to be prepared.
+It shall be named <code class="docutils literal notranslate"><span class="pre">MODELNAME_GRIDNAME</span></code> where <code class="docutils literal notranslate"><span class="pre">MODELNAME</span></code> is the name of the model (as it is called in the components folder) and <code class="docutils literal notranslate"><span class="pre">GRIDNAME</span></code> is the name of the model grid.
+To start, it makes most sense to look into the input folders that come with the example configuration.
+When you create your own model configurations, you can start by modifying those.</p>
+<div class="section" id="general-remarks">
+<h2>General remarks<a class="headerlink" href="#general-remarks" title="Permalink to this headline">¶</a></h2>
+<p>The input folders can contain files and arbitrarily named sub-directories which will simply be copied (or dynamically linked) to create a work directory for the model.
+An exception are subfolders named <code class="docutils literal notranslate"><span class="pre">from</span></code>.
+These should themselves contain subfolders named after years or dates as <code class="docutils literal notranslate"><span class="pre">YYYYMMDD</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">1950</span></code> or <code class="docutils literal notranslate"><span class="pre">19501201</span></code>).
+In case that the starting date of a model run is equal to or larger than a subfolder’s date, the files inside this folder will be copied to the directory containing the folder <code class="docutils literal notranslate"><span class="pre">from</span></code>.
+For example, if there are files</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">input</span><span class="o">/</span><span class="n">MOM5_maingrid</span><span class="o">/</span><span class="n">OBC</span><span class="o">/</span><span class="n">from</span><span class="o">/</span><span class="mi">1950</span><span class="o">/</span><span class="n">obc_sealevel</span><span class="o">.</span><span class="n">nc</span>
+<span class="nb">input</span><span class="o">/</span><span class="n">MOM5_maingrid</span><span class="o">/</span><span class="n">OBC</span><span class="o">/</span><span class="n">from</span><span class="o">/</span><span class="mi">1951</span><span class="o">/</span><span class="n">obc_sealevel</span><span class="o">.</span><span class="n">nc</span>
+<span class="nb">input</span><span class="o">/</span><span class="n">MOM5_maingrid</span><span class="o">/</span><span class="n">OBC</span><span class="o">/</span><span class="n">from</span><span class="o">/</span><span class="mi">1952</span><span class="o">/</span><span class="n">obc_sealevel</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<p>and the starting date of a model run is <code class="docutils literal notranslate"><span class="pre">1951-06-01</span></code>, the file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">input</span><span class="o">/</span><span class="n">MOM5_maingrid</span><span class="o">/</span><span class="n">OBC</span><span class="o">/</span><span class="n">from</span><span class="o">/</span><span class="mi">1951</span><span class="o">/</span><span class="n">obc_sealevel</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<p>will be copied (or linked) to</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">work</span><span class="o">/</span><span class="n">MOM5_maingrid</span><span class="o">/</span><span class="n">OBC</span><span class="o">/</span><span class="n">obc_sealevel</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="expected-contents-of-the-cosmo-clm-input-directory">
+<h2>Expected contents of the COSMO-CLM input directory<a class="headerlink" href="#expected-contents-of-the-cosmo-clm-input-directory" title="Permalink to this headline">¶</a></h2>
+<p>TODO what is expected here???</p>
+<p>The following settings are required in <code class="docutils literal notranslate"><span class="pre">INPUT_PHY</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">llake</span> <span class="o">=</span> <span class="n">FALSE</span>
+<span class="n">lseaice</span> <span class="o">=</span> <span class="n">FALSE</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="expected-contents-of-a-mom5-input-directory">
+<h2>Expected contents of a MOM5 input directory<a class="headerlink" href="#expected-contents-of-a-mom5-input-directory" title="Permalink to this headline">¶</a></h2>
+<p>TODO what is expected here</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./usage"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="parallelize_flux_calculator.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Parallelize the flux calulator</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="setting_up_global_settings.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Setting up the global_settings.py</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Sven Karsten<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

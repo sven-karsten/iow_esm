@@ -86,17 +86,10 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
-   IOW Earth system model documentation
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   getting_started
  </span>
@@ -117,6 +110,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../background/coupling_concept.html">
    Coupling concept
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../background/details_on_fluxes.html">
+   Details on individial fluxes
   </a>
  </li>
 </ul>
@@ -179,6 +177,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../../usage/automatic_synchronisation.html">
+   Automatic synchronization to another target
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../usage/create_forcings_for_CCLM.html">
    Create forcings for the CCLM model with int2lm
   </a>
@@ -189,8 +192,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../../usage/define_parallelization_layout.html">
+   Defining the parallelization layout
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../usage/directory_structure.html">
+   Directory Structure of the IOW ESM
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../usage/parallelize_flux_calculator.html">
    Parallelize the flux calulator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../usage/prepare_input_folders.html">
+   Preparing the input folders for individual model runs
   </a>
  </li>
  <li class="toctree-l1">
@@ -230,19 +248,28 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../grid_create_exchangegrid_MOM5/index.html">
+    <a class="reference internal" href="../grids/index.html">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
-       grid_create_exchangegrid_MOM5
+       grids
       </span>
      </code>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../grid_create_maskfile_CCLM/index.html">
+    <a class="reference internal" href="../grid_create_exchangegrid/index.html">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
-       grid_create_maskfile_CCLM
+       grid_create_exchangegrid
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grid_create_maskfile_atmos/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       grid_create_maskfile_atmos
       </span>
      </code>
     </a>
@@ -468,7 +495,7 @@ const thebe_selector_output = ".output, .cell_output"
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
 </div>
 
 </div>
@@ -513,22 +540,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 
             <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://git.io-warnemuende.de/iow_esm/main"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://git.io-warnemuende.de/iow_esm/main/issues/new?title=Issue%20on%20page%20%2Fautoapi/model_handling_I2LM/index.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
 

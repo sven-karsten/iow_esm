@@ -58,4 +58,8 @@ Calculation of fluxes in the atmospheric model and remapping on to the ocean's g
 
 ### Available models
 
-TODO
+At present, the following components can be coupled in the IOW ESM:
+* COSMO-CLM atmospheric model
+* MOM5.1 ocean model (including (a) the ERGOM ecosystem model and (b) a dynamic ice model, coupled internally via the FMS coupler)
+
+By its design it is modular, so more models will follow in future that can be interactively coupled together.

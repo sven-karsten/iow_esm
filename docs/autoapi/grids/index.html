@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>grid_create_maskfile_CCLM &#8212; IOW Earth system model</title>
+    <title>grids &#8212; IOW Earth system model</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="grid_create_uv_t_regridding" href="../grid_create_uv_t_regridding/index.html" />
-    <link rel="prev" title="grid_create_exchangegrid_MOM5" href="../grid_create_exchangegrid_MOM5/index.html" />
+    <link rel="next" title="grid_create_exchangegrid" href="../grid_create_exchangegrid/index.html" />
+    <link rel="prev" title="get_parallelization_layout" href="../get_parallelization_layout/index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -86,17 +86,10 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
-   IOW Earth system model documentation
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   getting_started
  </span>
@@ -117,6 +110,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../background/coupling_concept.html">
    Coupling concept
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../background/details_on_fluxes.html">
+   Details on individial fluxes
   </a>
  </li>
 </ul>
@@ -179,6 +177,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../../usage/automatic_synchronisation.html">
+   Automatic synchronization to another target
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../usage/create_forcings_for_CCLM.html">
    Create forcings for the CCLM model with int2lm
   </a>
@@ -189,8 +192,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../../usage/define_parallelization_layout.html">
+   Defining the parallelization layout
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../usage/directory_structure.html">
+   Directory Structure of the IOW ESM
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../usage/parallelize_flux_calculator.html">
    Parallelize the flux calulator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../usage/prepare_input_folders.html">
+   Preparing the input folders for individual model runs
   </a>
  </li>
  <li class="toctree-l1">
@@ -229,20 +247,29 @@ const thebe_selector_output = ".output, .cell_output"
      </code>
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../grid_create_exchangegrid_MOM5/index.html">
-     <code class="xref py py-mod docutils literal notranslate">
-      <span class="pre">
-       grid_create_exchangegrid_MOM5
-      </span>
-     </code>
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
-       grid_create_maskfile_CCLM
+       grids
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grid_create_exchangegrid/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       grid_create_exchangegrid
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grid_create_maskfile_atmos/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       grid_create_maskfile_atmos
       </span>
      </code>
     </a>
@@ -468,7 +495,7 @@ const thebe_selector_output = ".output, .cell_output"
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
 </div>
 
 </div>
@@ -503,7 +530,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/autoapi/grid_create_maskfile_CCLM/index.rst"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/autoapi/grids/index.rst"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
@@ -513,22 +540,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 
             <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://git.io-warnemuende.de/iow_esm/main"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://git.io-warnemuende.de/iow_esm/main/issues/new?title=Issue%20on%20page%20%2Fautoapi/grid_create_maskfile_CCLM/index.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
 
@@ -555,14 +566,53 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions">
-     Functions
+    <a class="reference internal nav-link" href="#classes">
+     Classes
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#grid_create_maskfile_CCLM.grid_create_maskfile_CCLM">
-       grid_create_maskfile_CCLM
+      <a class="reference internal nav-link" href="#grids.Grid">
+       Grid
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#grids.Grid.reconfigure">
+         reconfigure
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#grids.Grid.read">
+         read
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#grids.Grid.write">
+         write
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grids.IntersectionGrid">
+       IntersectionGrid
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grids.GridManager">
+       GridManager
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#grids.GridManager.prepare_exchange_grid">
+         prepare_exchange_grid
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#grids.GridManager.write_remapping">
+         write_remapping
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -578,7 +628,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>grid_create_maskfile_CCLM</h1>
+                <h1>grids</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -594,14 +644,53 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions">
-     Functions
+    <a class="reference internal nav-link" href="#classes">
+     Classes
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#grid_create_maskfile_CCLM.grid_create_maskfile_CCLM">
-       grid_create_maskfile_CCLM
+      <a class="reference internal nav-link" href="#grids.Grid">
+       Grid
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#grids.Grid.reconfigure">
+         reconfigure
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#grids.Grid.read">
+         read
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#grids.Grid.write">
+         write
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grids.IntersectionGrid">
+       IntersectionGrid
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grids.GridManager">
+       GridManager
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#grids.GridManager.prepare_exchange_grid">
+         prepare_exchange_grid
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#grids.GridManager.write_remapping">
+         write_remapping
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -616,27 +705,69 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="section" id="module-grid_create_maskfile_CCLM">
-<span id="grid-create-maskfile-cclm"></span><h1><a class="reference internal" href="#module-grid_create_maskfile_CCLM" title="grid_create_maskfile_CCLM"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grid_create_maskfile_CCLM</span></code></a><a class="headerlink" href="#module-grid_create_maskfile_CCLM" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-grids">
+<span id="grids"></span><h1><a class="reference internal" href="#module-grids" title="grids"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grids</span></code></a><a class="headerlink" href="#module-grids" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#grid_create_maskfile_CCLM.grid_create_maskfile_CCLM" title="grid_create_maskfile_CCLM.grid_create_maskfile_CCLM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_create_maskfile_CCLM</span></code></a>(IOW_ESM_ROOT, my_directory, which_grid='t_grid')</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#grids.Grid" title="grids.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#grids.IntersectionGrid" title="grids.IntersectionGrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IntersectionGrid</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#grids.GridManager" title="grids.GridManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GridManager</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py function">
-<dt class="sig sig-object py" id="grid_create_maskfile_CCLM.grid_create_maskfile_CCLM">
-<span class="sig-prename descclassname"><span class="pre">grid_create_maskfile_CCLM.</span></span><span class="sig-name descname"><span class="pre">grid_create_maskfile_CCLM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">IOW_ESM_ROOT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">my_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">which_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'t_grid'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grid_create_maskfile_CCLM.grid_create_maskfile_CCLM" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="grids.Grid">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grids.</span></span><span class="sig-name descname"><span class="pre">Grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grids.Grid" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="grids.Grid.reconfigure">
+<span class="sig-name descname"><span class="pre">reconfigure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grids.Grid.reconfigure" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grids.Grid.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grids.Grid.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grids.Grid.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grids.Grid.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="grids.IntersectionGrid">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grids.</span></span><span class="sig-name descname"><span class="pre">IntersectionGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grids.IntersectionGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#grids.Grid" title="grids.Grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="grids.GridManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grids.</span></span><span class="sig-name descname"><span class="pre">GridManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exchange_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grids.GridManager" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="grids.GridManager.prepare_exchange_grid">
+<span class="sig-name descname"><span class="pre">prepare_exchange_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_for_exchange_grid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grids.GridManager.prepare_exchange_grid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grids.GridManager.write_remapping">
+<span class="sig-name descname"><span class="pre">write_remapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grids.GridManager.write_remapping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
 
 </div>
 </div>
@@ -655,7 +786,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./autoapi/grid_create_maskfile_CCLM"
+            path: "./autoapi/grids"
         },
         predefinedOutput: true
     }
@@ -667,17 +798,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../grid_create_exchangegrid_MOM5/index.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../get_parallelization_layout/index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grid_create_exchangegrid_MOM5</span></code></p>
+            <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">get_parallelization_layout</span></code></p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../grid_create_uv_t_regridding/index.html" title="next page">
+    <a class='right-next' id="next-link" href="../grid_create_exchangegrid/index.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grid_create_uv_t_regridding</span></code></p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grid_create_exchangegrid</span></code></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

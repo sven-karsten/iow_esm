@@ -17,6 +17,6 @@ Functions
 
 
 
-.. py:function:: grid_create_uv_t_regridding(IOW_ESM_ROOT, bottom_model, which_grid)
+.. py:function:: grid_create_uv_t_regridding(global_settings, bottom_model, which_grid)
 
 

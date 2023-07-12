@@ -17,6 +17,6 @@ Functions
 
 
 
-.. py:function:: create_namcouple(global_settings, work_directory_root, start_date, end_date)
+.. py:function:: create_namcouple(global_settings, start_date, end_date)
 
 

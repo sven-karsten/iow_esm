@@ -17,6 +17,6 @@ Functions
 
 
 
-.. py:function:: create_work_directories(global_settings, work_directory_root, start_date, end_date, model_handler, global_workdir_base='')
+.. py:function:: create_work_directories(global_settings, work_directory_root, start_date, end_date, model_handler)
 
 

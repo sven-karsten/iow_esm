@@ -28,6 +28,7 @@ Attributes
    machine_settings_hlrn.bash_get_rank
    machine_settings_hlrn.python_get_rank
    machine_settings_hlrn.use_mpi_machinefile
+   machine_settings_hlrn.resubmit_command
 
 
 .. py:data:: mpi_run_command
@@ -60,4 +61,9 @@ Attributes
 
 .. py:function:: get_node_list()
 
+
+.. py:data:: resubmit_command
+   :annotation: = sbatch jobscript
+
+   
 

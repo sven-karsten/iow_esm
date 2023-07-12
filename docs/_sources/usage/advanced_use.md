@@ -45,6 +45,7 @@ That way, you can always identify with which version of the code your working on
 (usage:advanced_use:running_during_development)=
 ## Running during development
 
+TODO: change this section to use of several input folders.
 
 ### Update the setup before running
 

@@ -17,7 +17,7 @@ Classes
 
 
 
-.. py:class:: GlobalSettings(root_dir, global_settings='input/global_settings.py')
+.. py:class:: GlobalSettings(root_dir, input_name='')
 
    Class that contains the variables of global_settings.py as attributes.
 

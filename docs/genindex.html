@@ -84,17 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   IOW Earth system model documentation
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   getting_started
  </span>
@@ -115,6 +108,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="background/coupling_concept.html">
    Coupling concept
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="background/details_on_fluxes.html">
+   Details on individial fluxes
   </a>
  </li>
 </ul>
@@ -177,6 +175,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="usage/automatic_synchronisation.html">
+   Automatic synchronization to another target
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="usage/create_forcings_for_CCLM.html">
    Create forcings for the CCLM model with int2lm
   </a>
@@ -187,8 +190,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="usage/define_parallelization_layout.html">
+   Defining the parallelization layout
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="usage/directory_structure.html">
+   Directory Structure of the IOW ESM
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="usage/parallelize_flux_calculator.html">
    Parallelize the flux calulator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="usage/prepare_input_folders.html">
+   Preparing the input folders for individual model runs
   </a>
  </li>
  <li class="toctree-l1">
@@ -228,19 +246,28 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="autoapi/grid_create_exchangegrid_MOM5/index.html">
+    <a class="reference internal" href="autoapi/grids/index.html">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
-       grid_create_exchangegrid_MOM5
+       grids
       </span>
      </code>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="autoapi/grid_create_maskfile_CCLM/index.html">
+    <a class="reference internal" href="autoapi/grid_create_exchangegrid/index.html">
      <code class="xref py py-mod docutils literal notranslate">
       <span class="pre">
-       grid_create_maskfile_CCLM
+       grid_create_exchangegrid
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="autoapi/grid_create_maskfile_atmos/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       grid_create_maskfile_atmos
       </span>
      </code>
     </a>
@@ -466,7 +493,7 @@ const thebe_selector_output = ".output, .cell_output"
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
 </div>
 
 </div>
@@ -494,22 +521,6 @@ const thebe_selector_output = ".output, .cell_output"
             
             
             <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://git.io-warnemuende.de/iow_esm/main"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://git.io-warnemuende.de/iow_esm/main/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
 
@@ -547,7 +558,8 @@ const thebe_selector_output = ".output, .cell_output"
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#A"><strong>A</strong></a>
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
  | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
@@ -568,6 +580,14 @@ const thebe_selector_output = ".output, .cell_output"
  | <a href="#W"><strong>W</strong></a>
  
 </div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/run_helpers/index.html#run_helpers.CreateLockedFile.__del__">__del__() (run_helpers.CreateLockedFile method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -675,6 +695,8 @@ const thebe_selector_output = ".output, .cell_output"
         <li><a href="autoapi/model_handling_MOM5/index.html#model_handling_MOM5.ModelHandler.create_work_directory">(model_handling_MOM5.ModelHandler method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/run_helpers/index.html#run_helpers.CreateLockedFile">CreateLockedFile (class in run_helpers)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -771,10 +793,10 @@ const thebe_selector_output = ".output, .cell_output"
         <li><a href="autoapi/get_parallelization_layout/index.html#module-get_parallelization_layout">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/get_parallelization_layout/index.html#get_parallelization_layout.get_parallelization_layout">get_parallelization_layout() (in module get_parallelization_layout)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/mapping_helper_functions/index.html#mapping_helper_functions.get_polys_and_boxes">get_polys_and_boxes() (in module mapping_helper_functions)</a>
 </li>
       <li>
@@ -790,6 +812,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
       <li><a href="autoapi/parse_global_settings/index.html#parse_global_settings.GlobalSettings">GlobalSettings (class in parse_global_settings)</a>
 </li>
+      <li><a href="autoapi/grids/index.html#grids.Grid">Grid (class in grids)</a>
+</li>
       <li><a href="autoapi/model_handling/index.html#model_handling.ModelHandlerBase.grid_convert_to_SCRIP">grid_convert_to_SCRIP() (model_handling.ModelHandlerBase method)</a>
 
       <ul>
@@ -799,22 +823,22 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
       </ul></li>
       <li>
-    grid_create_exchangegrid_MOM5
+    grid_create_exchangegrid
 
       <ul>
-        <li><a href="autoapi/grid_create_exchangegrid_MOM5/index.html#module-grid_create_exchangegrid_MOM5">module</a>
+        <li><a href="autoapi/grid_create_exchangegrid/index.html#module-grid_create_exchangegrid">module</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/grid_create_exchangegrid_MOM5/index.html#grid_create_exchangegrid_MOM5.grid_create_exchangegrid_MOM5">grid_create_exchangegrid_MOM5() (in module grid_create_exchangegrid_MOM5)</a>
+      <li><a href="autoapi/grid_create_exchangegrid/index.html#grid_create_exchangegrid.grid_create_exchangegrid">grid_create_exchangegrid() (in module grid_create_exchangegrid)</a>
 </li>
       <li>
-    grid_create_maskfile_CCLM
+    grid_create_maskfile_atmos
 
       <ul>
-        <li><a href="autoapi/grid_create_maskfile_CCLM/index.html#module-grid_create_maskfile_CCLM">module</a>
+        <li><a href="autoapi/grid_create_maskfile_atmos/index.html#module-grid_create_maskfile_atmos">module</a>
 </li>
       </ul></li>
-      <li><a href="autoapi/grid_create_maskfile_CCLM/index.html#grid_create_maskfile_CCLM.grid_create_maskfile_CCLM">grid_create_maskfile_CCLM() (in module grid_create_maskfile_CCLM)</a>
+      <li><a href="autoapi/grid_create_maskfile_atmos/index.html#grid_create_maskfile_atmos.grid_create_maskfile_atmos">grid_create_maskfile_atmos() (in module grid_create_maskfile_atmos)</a>
 </li>
       <li>
     grid_create_uv_t_regridding
@@ -825,6 +849,15 @@ const thebe_selector_output = ".output, .cell_output"
       </ul></li>
       <li><a href="autoapi/grid_create_uv_t_regridding/index.html#grid_create_uv_t_regridding.grid_create_uv_t_regridding">grid_create_uv_t_regridding() (in module grid_create_uv_t_regridding)</a>
 </li>
+      <li><a href="autoapi/grids/index.html#grids.GridManager">GridManager (class in grids)</a>
+</li>
+      <li>
+    grids
+
+      <ul>
+        <li><a href="autoapi/grids/index.html#module-grids">module</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/model_handling/index.html#model_handling.GridTypes">GridTypes (class in model_handling)</a>
 </li>
   </ul></td>
@@ -846,6 +879,12 @@ const thebe_selector_output = ".output, .cell_output"
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/parallelize_mappings/index.html#parallelize_mappings.input_name">input_name (in module parallelize_mappings)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/grids/index.html#grids.IntersectionGrid">IntersectionGrid (class in grids)</a>
+</li>
       <li><a href="autoapi/parallelize_mappings/index.html#parallelize_mappings.IOW_ESM_ROOT">IOW_ESM_ROOT (in module parallelize_mappings)</a>
 </li>
   </ul></td>
@@ -954,11 +993,13 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
         <li><a href="autoapi/get_run_information/index.html#module-get_run_information">get_run_information</a>
 </li>
-        <li><a href="autoapi/grid_create_exchangegrid_MOM5/index.html#module-grid_create_exchangegrid_MOM5">grid_create_exchangegrid_MOM5</a>
+        <li><a href="autoapi/grid_create_exchangegrid/index.html#module-grid_create_exchangegrid">grid_create_exchangegrid</a>
 </li>
-        <li><a href="autoapi/grid_create_maskfile_CCLM/index.html#module-grid_create_maskfile_CCLM">grid_create_maskfile_CCLM</a>
+        <li><a href="autoapi/grid_create_maskfile_atmos/index.html#module-grid_create_maskfile_atmos">grid_create_maskfile_atmos</a>
 </li>
         <li><a href="autoapi/grid_create_uv_t_regridding/index.html#module-grid_create_uv_t_regridding">grid_create_uv_t_regridding</a>
+</li>
+        <li><a href="autoapi/grids/index.html#module-grids">grids</a>
 </li>
         <li><a href="autoapi/hotstart_handling/index.html#module-hotstart_handling">hotstart_handling</a>
 </li>
@@ -1066,10 +1107,10 @@ const thebe_selector_output = ".output, .cell_output"
         <li><a href="autoapi/parse_global_settings/index.html#module-parse_global_settings">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/mapping_helper_functions/index.html#mapping_helper_functions.polygon_area">polygon_area() (in module mapping_helper_functions)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     postprocess_handling
 
@@ -1080,6 +1121,8 @@ const thebe_selector_output = ".output, .cell_output"
       <li><a href="autoapi/postprocess_handling/index.html#postprocess_handling.postprocess_handling">postprocess_handling() (in module postprocess_handling)</a>
 </li>
       <li><a href="autoapi/attempt_handler_example/index.html#attempt_handler_example.MyAttemptHandler.prepare_attempt">prepare_attempt() (attempt_handler_example.MyAttemptHandler method)</a>
+</li>
+      <li><a href="autoapi/grids/index.html#grids.GridManager.prepare_exchange_grid">prepare_exchange_grid() (grids.GridManager method)</a>
 </li>
       <li><a href="autoapi/machine_settings_haumea/index.html#machine_settings_haumea.python_get_rank">python_get_rank (in module machine_settings_haumea)</a>
 
@@ -1092,6 +1135,18 @@ const thebe_selector_output = ".output, .cell_output"
 
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/grids/index.html#grids.Grid.read">read() (grids.Grid method)</a>
+</li>
+      <li><a href="autoapi/grids/index.html#grids.Grid.reconfigure">reconfigure() (grids.Grid method)</a>
+</li>
+      <li><a href="autoapi/machine_settings_haumea/index.html#machine_settings_haumea.resubmit_command">resubmit_command (in module machine_settings_haumea)</a>
+
+      <ul>
+        <li><a href="autoapi/machine_settings_hlrn/index.html#machine_settings_hlrn.resubmit_command">(in module machine_settings_hlrn)</a>
+</li>
+      </ul></li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     run_helpers
@@ -1110,9 +1165,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
       <li><a href="autoapi/model_handling_flux/index.html#model_handling_flux.FluxCalculatorModes.single_core">single_core (model_handling_flux.FluxCalculatorModes attribute)</a>
 </li>
+      <li><a href="autoapi/parallelize_mappings_helpers/index.html#parallelize_mappings_helpers.sort_exchange_grid">sort_exchange_grid() (in module parallelize_mappings_helpers)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="autoapi/parallelize_mappings_helpers/index.html#parallelize_mappings_helpers.sort_exchange_grid">sort_exchange_grid() (in module parallelize_mappings_helpers)</a>
+      <li><a href="autoapi/run_helpers/index.html#run_helpers.start_mpi_jobs">start_mpi_jobs() (in module run_helpers)</a>
 </li>
       <li><a href="autoapi/postprocess_handling/index.html#postprocess_handling.start_postprocessing">start_postprocessing() (in module postprocess_handling)</a>
 </li>
@@ -1133,6 +1190,8 @@ const thebe_selector_output = ".output, .cell_output"
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/model_handling/index.html#model_handling.GridTypes.u_grid">u_grid (model_handling.GridTypes attribute)</a>
+</li>
+      <li><a href="autoapi/run_helpers/index.html#run_helpers.CreateLockedFile.unlock">unlock() (run_helpers.CreateLockedFile method)</a>
 </li>
       <li><a href="autoapi/parallelize_mappings_helpers/index.html#parallelize_mappings_helpers.update_regridding">update_regridding() (in module parallelize_mappings_helpers)</a>
 </li>
@@ -1170,11 +1229,21 @@ const thebe_selector_output = ".output, .cell_output"
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/parallelize_mappings/index.html#parallelize_mappings.work_dir">work_dir (in module parallelize_mappings)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/grids/index.html#grids.Grid.write">write() (grids.Grid method)</a>
+</li>
       <li><a href="autoapi/run_helpers/index.html#run_helpers.write_machinefile">write_machinefile() (in module run_helpers)</a>
 </li>
+      <li><a href="autoapi/run_helpers/index.html#run_helpers.write_mpmd_file">write_mpmd_file() (in module run_helpers)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/parallelize_mappings_helpers/index.html#parallelize_mappings_helpers.write_remap_file">write_remap_file() (in module parallelize_mappings_helpers)</a>
+</li>
+      <li><a href="autoapi/grids/index.html#grids.GridManager.write_remapping">write_remapping() (grids.GridManager method)</a>
+</li>
+      <li><a href="autoapi/run_helpers/index.html#run_helpers.write_run_after_scripts">write_run_after_scripts() (in module run_helpers)</a>
+</li>
+      <li><a href="autoapi/run_helpers/index.html#run_helpers.write_run_scripts">write_run_scripts() (in module run_helpers)</a>
 </li>
   </ul></td>
 </tr></table>
