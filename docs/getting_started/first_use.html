@@ -135,11 +135,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../development/new_destinations.html">
-   Enable new destinations
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../development/new_model.html">
    Add a new model
   </a>
@@ -606,6 +601,11 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#minimal-setup-on-the-iow-s-hyrax-server">
+         Minimal setup on the IOW’s Hyrax server
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#hlrn-in-gottingen">
          HLRN in Göttingen
         </a>
@@ -692,6 +692,11 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#minimal-setup-on-the-iow-s-hyrax-server">
+         Minimal setup on the IOW’s Hyrax server
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#hlrn-in-gottingen">
          HLRN in Göttingen
         </a>
@@ -761,14 +766,13 @@ By executing in the root directory (where this <code class="docutils literal not
 <p>you clone all individual components which have their own repositories to your local machine.
 If there will be some you don’t need you can later remove them.
 However, be sure that you can still build and run the model properly.
-For instance, if you want to run the models uncoupled from the other you still have to build the OASIS coupler first,
-see <code class="docutils literal notranslate"><span class="pre">documentation/developers_documentation.pdf</span></code> for details.</p>
+For instance, if you want to run the models uncoupled from the other you still have to build the OASIS coupler first,</p>
 <p>Note that depending on your choice from above, i.e. you cloned the main project as a user or as a developer,
 you will clone the latest release branches or the master (development) branches, respectively.
 However, if you started as user but decide later to develop you can always check out the individual master branches manually.</p>
 </div>
 <div class="section" id="configure-your-destinations-targets">
-<h3>Configure your destinations (targets)<a class="headerlink" href="#configure-your-destinations-targets" title="Permalink to this headline">¶</a></h3>
+<span id="getting-started-first-use-configure-destinations"></span><h3>Configure your destinations (targets)<a class="headerlink" href="#configure-your-destinations-targets" title="Permalink to this headline">¶</a></h3>
 <p>You will not build (or run) the model on your local computer.
 Instead you have to specify a destination or a target, where your sources are copied and compiled.
 This is done a file <code class="docutils literal notranslate"><span class="pre">DESTINATIONS</span></code> (this name is obligatory).
@@ -791,18 +795,19 @@ The first is the <em>keyword for the target</em>. This keyword has to match one 
 </ul>
 <p>At the moment there are running build scripts only for these targets, which can be found the file <code class="docutils literal notranslate"><span class="pre">AVAILABLE_TARGETS</span></code> as well.
 Do not edit or commit this file unless you really know what you are doing.
-If you want to add more targets, it will be explained in <a class="reference external" href="#register-new-destinations">Register new destinations</a>.</p>
+<strong>IMPORTANT: If you want to add more targets, it will be explained in <a class="reference internal" href="../usage/new_destinations.html#usage-new-target-machines"><span class="std std-ref">Add new target machines</span></a>.</strong></p>
 <p>The second element in a line of <code class="docutils literal notranslate"><span class="pre">DESTINATIONS.example</span></code> corresponds to the <em>root directory on the target</em>, the path, where the whole model will be deployed, built and run.
 If the path on the target does not exist, it will be created.
 Be sure that you have write permissions.
-Importantly, the location <em>must</em> have the following format <code class="docutils literal notranslate"><span class="pre">user&#64;host:/path/to/rootdirectory</span></code>.
+The root directory will have the folder structure described in <a class="reference internal" href="../usage/directory_structure.html#usage-directory-structure"><span class="std std-ref">Directory Structure of the IOW ESM</span></a> once everything is set up.</p>
+<p>Importantly, the location in <code class="docutils literal notranslate"><span class="pre">DESTINATIONS</span></code> <em>must</em> have the following format <code class="docutils literal notranslate"><span class="pre">user&#64;host:/path/to/rootdirectory</span></code>.
 Both user and host name are use in the script and cannot be omitted although you might have some shortcuts and aliases for your accounts.
 <strong>Now it is up to you, to create your own file <code class="docutils literal notranslate"><span class="pre">DESTINATIONS</span></code> in your local root directory, but do not commit it!</strong>
-Note that there is also the possibility to give more advanced keywords to run several instances on the same target, see <a class="reference external" href="#advanced-destination-keywords">Advanced destination keywords</a></p>
+Note that there is also the possibility to give more advanced keywords to run several instances on the same target, see <a class="reference internal" href="../usage/advanced_use.html#usage-advanced-use-advanced-destination-keywords"><span class="std std-ref">Advanced destination keywords</span></a></p>
 </div>
 <div class="section" id="build-the-coupled-model-for-the-first-time">
 <h3>Build the coupled model for the first time<a class="headerlink" href="#build-the-coupled-model-for-the-first-time" title="Permalink to this headline">¶</a></h3>
-<p>Each component can be built individually by executing the build scripts in the component’s directory, see <a class="reference external" href="#build-single-components-in-a-different-modes-and-configurations">Build single components in a different modes and configurations</a>.
+<p>Each component can be built individually by executing the build scripts in the component’s directory, see <a class="reference internal" href="../usage/advanced_use.html#usage-advanced-use-build-single-components-in-a-different-modes-and-configurations"><span class="std std-ref">Build single components in a different modes and configurations</span></a>.
 However, for the first build the order is important, since some components of the coupled model depend on each other.
 Therefore, you should use the <code class="docutils literal notranslate"><span class="pre">build.sh</span></code> script in the root directory.
 If you want to build the model e.g. on the HLRN cluster located in Berlin, you can run, e.g.</p>
@@ -813,7 +818,7 @@ If you want to build the model e.g. on the HLRN cluster located in Berlin, you c
 Note that we will stick to this specific target throughout this Readme.
 Nevertheless, if you want to work with another target for your first tests, just replace <code class="docutils literal notranslate"><span class="pre">hlrng</span></code> with another valid keyword.
 Note further that the first argument is non-optional, whereas there are two others which can be omitted,
-see <a class="reference external" href="#build-single-components-in-a-different-modes-and-configurations">Build single components in a different modes and configurations</a>.</p>
+see <a class="reference internal" href="../usage/advanced_use.html#usage-advanced-use-build-single-components-in-a-different-modes-and-configurations"><span class="std std-ref">Build single components in a different modes and configurations</span></a>.</p>
 </div>
 <div class="section" id="deploy-dependencies-for-running-setups">
 <h3>Deploy dependencies for running (setups)<a class="headerlink" href="#deploy-dependencies-for-running-setups" title="Permalink to this headline">¶</a></h3>
@@ -828,16 +833,17 @@ However, there is an example <code class="docutils literal notranslate"><span cl
 You see that each line consists of two elements.
 The first is the <em>keyword for the setup</em>.
 This keyword can be chosen by you almost freely.
-It should be unique and a single word without spaces.
-In order to update from one or several setups you can call the run script <code class="docutils literal notranslate"><span class="pre">run.sh</span></code> with a second, third, etc. argument representing your setup keys in the <code class="docutils literal notranslate"><span class="pre">SETUP</span></code>.
-The files from these setups are then synchronized to the target in the order they appear as arguments.
-That is, the last setup will overwrite the ones before if files are overlapping.</p>
+It should be unique and a single word without spaces.</p>
 <p>The second element of a line in <code class="docutils literal notranslate"><span class="pre">SETUPS</span></code> represents the location of this setup.
-This can be local on your machine or on a remote computer.
+This can be local on your machine or on a remote computer or given by a link to a server that can be accessed by the <code class="docutils literal notranslate"><span class="pre">curl</span></code> command.
 Be sure that the remote computer knows your targets and can copy files to them.</p>
 </div>
 <div class="section" id="available-setups">
 <h4>Available setups<a class="headerlink" href="#available-setups" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="minimal-setup-on-the-iow-s-hyrax-server">
+<h5>Minimal setup on the IOW’s Hyrax server<a class="headerlink" href="#minimal-setup-on-the-iow-s-hyrax-server" title="Permalink to this headline">¶</a></h5>
+<p>TODO: Add url to <code class="docutils literal notranslate"><span class="pre">SETUPS.example</span></code>, explain what has to be changed for other target</p>
+</div>
 <div class="section" id="hlrn-in-gottingen">
 <h5>HLRN in Göttingen<a class="headerlink" href="#hlrn-in-gottingen" title="Permalink to this headline">¶</a></h5>
 <p>You can find an example setup for a MOM5 for the Baltic sea coupled to a CCLM model for the Eurocordex domain under <code class="docutils literal notranslate"><span class="pre">/scratch/usr/mviowmod/IOW_ESM/setups/MOM5_Baltic-CCLM_Eurocordex/example_8nm_0.22deg/1.00.00</span></code>.
@@ -846,7 +852,8 @@ The corresponding line in the <code class="docutils literal notranslate"><span c
 where <code class="docutils literal notranslate"><span class="pre">user</span></code> should be replaced by your user name on the HLRN in Göttingen.
 It might be also necessary to add the full domain to the hostname, depending on your ssh configuration.
 Other example setups (also for uncoupled runs) can be found in <code class="docutils literal notranslate"><span class="pre">SETUPS.example</span></code> in this directory.</p>
-<p><strong>TODO:</strong> Explain strucutre of the setup folder (= root directoy)</p>
+<p>The content of the setup folder will be synchronized into the root directory (i.e. the path you configured in your <code class="docutils literal notranslate"><span class="pre">DESTINATIONS</span></code> file).
+The synchronization is done in update mode, thus files are overwritten if the source files have later timestamps.</p>
 </div>
 </div>
 <div class="section" id="copy-setup-files-to-target">
@@ -859,8 +866,8 @@ Other example setups (also for uncoupled runs) can be found in <code class="docu
 Especially you should go to the <code class="docutils literal notranslate"><span class="pre">input</span></code> folder and open the file <code class="docutils literal notranslate"><span class="pre">global_settings.py</span></code>.
 Please enter your name and email here.
 Moreover you should have a look at the file <code class="docutils literal notranslate"><span class="pre">jobscript_*</span></code>.
-Here you may adjust the account which you will use for running the model.
-More details on the preparation of the <code class="docutils literal notranslate"><span class="pre">input</span></code> folder is given in the file <code class="docutils literal notranslate"><span class="pre">documentation/developers_documentation.pdf</span></code>.</p>
+Here you may adjust the account which you will use for running the model, see <a class="reference internal" href="../usage/setting_up_jobscript.html#usage-setting-up-jobscript"><span class="std std-ref">Setting up your jobscript template</span></a>.
+More details on the preparation of the <code class="docutils literal notranslate"><span class="pre">input</span></code> folder is given in <a class="reference internal" href="../usage/setting_up_global_settings.html#usage-setting-up-global-settings"><span class="std std-ref">Setting up the global_settings.py</span></a> and <a class="reference internal" href="../usage/prepare_input_folders.html#usage-prepare-input-folders"><span class="std std-ref">Preparing the input folders for individual model runs</span></a>.</p>
 </div>
 </div>
 <div class="section" id="run-the-coupled-model-for-the-first-time">
@@ -874,7 +881,7 @@ By executing the run script all files from <code class="docutils literal notrans
 <p>After the scripts are transferred the model is started on the target.</p>
 <p>If you use one of the setups from the <code class="docutils literal notranslate"><span class="pre">SETUPS.example</span></code> file, there is no need for further preparation of the coupled model.
 However for the general case there is the possibility to run preparation scripts that set up the exchange grid
-and remapping files for the coupler, see <code class="docutils literal notranslate"><span class="pre">documentation/developers_documentation.pdf</span></code>.
+and remapping files for the coupler.
 Note that for an uncoupled run there is no need for the preparation.</p>
 </div>
 </div>

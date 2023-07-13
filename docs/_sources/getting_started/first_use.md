@@ -52,13 +52,12 @@ you clone all individual components which have their own repositories to your lo
 If there will be some you don't need you can later remove them. 
 However, be sure that you can still build and run the model properly.
 For instance, if you want to run the models uncoupled from the other you still have to build the OASIS coupler first, 
-see `documentation/developers_documentation.pdf` for details.
 
 Note that depending on your choice from above, i.e. you cloned the main project as a user or as a developer, 
 you will clone the latest release branches or the master (development) branches, respectively.
 However, if you started as user but decide later to develop you can always check out the individual master branches manually.
 
-
+(getting_started:first_use:configure-destinations)=
 ### Configure your destinations (targets)
 
 You will not build (or run) the model on your local computer.
@@ -83,20 +82,22 @@ where
 
 At the moment there are running build scripts only for these targets, which can be found the file `AVAILABLE_TARGETS` as well.
 Do not edit or commit this file unless you really know what you are doing.
-If you want to add more targets, it will be explained in [Register new destinations](#register-new-destinations).
+**IMPORTANT: If you want to add more targets, it will be explained in [](usage:new-target-machines).**
 
 The second element in a line of `DESTINATIONS.example` corresponds to the *root directory on the target*, the path, where the whole model will be deployed, built and run.
 If the path on the target does not exist, it will be created.
 Be sure that you have write permissions.
-Importantly, the location _must_ have the following format `user@host:/path/to/rootdirectory`.
+The root directory will have the folder structure described in [](usage:directory_structure) once everything is set up.
+
+Importantly, the location in `DESTINATIONS` _must_ have the following format `user@host:/path/to/rootdirectory`.
 Both user and host name are use in the script and cannot be omitted although you might have some shortcuts and aliases for your accounts.
 **Now it is up to you, to create your own file `DESTINATIONS` in your local root directory, but do not commit it!**
-Note that there is also the possibility to give more advanced keywords to run several instances on the same target, see [Advanced destination keywords](#advanced-destination-keywords)
+Note that there is also the possibility to give more advanced keywords to run several instances on the same target, see [](usage:advanced_use:advanced_destination_keywords)
 
 
 ### Build the coupled model for the first time
 
-Each component can be built individually by executing the build scripts in the component's directory, see [Build single components in a different modes and configurations](#build-single-components-in-a-different-modes-and-configurations).
+Each component can be built individually by executing the build scripts in the component's directory, see [](usage:advanced_use:build-single-components-in-a-different-modes-and-configurations).
 However, for the first build the order is important, since some components of the coupled model depend on each other.
 Therefore, you should use the `build.sh` script in the root directory.
 If you want to build the model e.g. on the HLRN cluster located in Berlin, you can run, e.g.
@@ -109,7 +110,7 @@ This will build the model on `hlrng` in release mode.
 Note that we will stick to this specific target throughout this Readme.
 Nevertheless, if you want to work with another target for your first tests, just replace `hlrng` with another valid keyword.
 Note further that the first argument is non-optional, whereas there are two others which can be omitted, 
-see [Build single components in a different modes and configurations](#build-single-components-in-a-different-modes-and-configurations).
+see [](usage:advanced_use:build-single-components-in-a-different-modes-and-configurations).
 
 
 ### Deploy dependencies for running (setups)
@@ -127,16 +128,19 @@ You see that each line consists of two elements.
 The first is the *keyword for the setup*. 
 This keyword can be chosen by you almost freely.
 It should be unique and a single word without spaces.
-In order to update from one or several setups you can call the run script `run.sh` with a second, third, etc. argument representing your setup keys in the `SETUP`.
-The files from these setups are then synchronized to the target in the order they appear as arguments.
-That is, the last setup will overwrite the ones before if files are overlapping.
+
 
 The second element of a line in `SETUPS` represents the location of this setup. 
-This can be local on your machine or on a remote computer.
+This can be local on your machine or on a remote computer or given by a link to a server that can be accessed by the `curl` command.
 Be sure that the remote computer knows your targets and can copy files to them. 
 
 
 #### Available setups
+
+##### Minimal setup on the IOW's Hyrax server
+
+TODO: Add url to `SETUPS.example`, explain what has to be changed for other target
+
 
 ##### HLRN in Göttingen
 You can find an example setup for a MOM5 for the Baltic sea coupled to a CCLM model for the Eurocordex domain under `/scratch/usr/mviowmod/IOW_ESM/setups/MOM5_Baltic-CCLM_Eurocordex/example_8nm_0.22deg/1.00.00`.
@@ -146,7 +150,8 @@ where `user` should be replaced by your user name on the HLRN in Göttingen.
 It might be also necessary to add the full domain to the hostname, depending on your ssh configuration.
 Other example setups (also for uncoupled runs) can be found in `SETUPS.example` in this directory.
 
-**TODO:** Explain strucutre of the setup folder (= root directoy)
+The content of the setup folder will be synchronized into the root directory (i.e. the path you configured in your `DESTINATIONS` file). 
+The synchronization is done in update mode, thus files are overwritten if the source files have later timestamps.
 
 
 #### Copy setup files to target
@@ -161,8 +166,8 @@ Before running the model you should have a look at the deployed folders on your 
 Especially you should go to the `input` folder and open the file `global_settings.py`.
 Please enter your name and email here.
 Moreover you should have a look at the file `jobscript_*`. 
-Here you may adjust the account which you will use for running the model.
-More details on the preparation of the `input` folder is given in the file `documentation/developers_documentation.pdf`.  
+Here you may adjust the account which you will use for running the model, see [](usage:setting_up_jobscript).
+More details on the preparation of the `input` folder is given in [](usage:setting_up_global_settings) and [](usage:prepare_input_folders).  
  
 
 ### Run the coupled model for the first time
@@ -180,6 +185,6 @@ After the scripts are transferred the model is started on the target.
 
 If you use one of the setups from the `SETUPS.example` file, there is no need for further preparation of the coupled model.
 However for the general case there is the possibility to run preparation scripts that set up the exchange grid 
-and remapping files for the coupler, see `documentation/developers_documentation.pdf`. 
+and remapping files for the coupler. 
 Note that for an uncoupled run there is no need for the preparation.
 

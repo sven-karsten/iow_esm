@@ -135,11 +135,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../development/new_destinations.html">
-   Enable new destinations
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../development/new_model.html">
    Add a new model
   </a>
@@ -583,18 +578,6 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-during-development">
-   Running during development
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#update-the-setup-before-running">
-     Update the setup before running
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#archiving">
    Archiving
   </a>
@@ -649,18 +632,6 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-during-development">
-   Running during development
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#update-the-setup-before-running">
-     Update the setup before running
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#archiving">
    Archiving
   </a>
@@ -684,15 +655,15 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="advanced-use">
 <h1>Advanced use<a class="headerlink" href="#advanced-use" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="advanced-destination-keywords">
-<h2>Advanced destination keywords<a class="headerlink" href="#advanced-destination-keywords" title="Permalink to this headline">¶</a></h2>
-<p>It is possible to use not only the destination keywords given in <a class="reference external" href="#configure-your-destinations-(targets)">Configure your destinations (targets)</a>.
+<span id="usage-advanced-use-advanced-destination-keywords"></span><h2>Advanced destination keywords<a class="headerlink" href="#advanced-destination-keywords" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to use not only the destination keywords given in <a class="reference internal" href="../getting_started/first_use.html#getting-started-first-use-configure-destinations"><span class="std std-ref">Configure your destinations (targets)</span></a>.
 You can also use something like e.g. <code class="docutils literal notranslate"><span class="pre">hlrng_XXX</span></code> and <code class="docutils literal notranslate"><span class="pre">hlrng_YYY</span></code> if you want to run two independent instances on the target <code class="docutils literal notranslate"><span class="pre">hlrng</span></code>.
 However, the string before the <em>first</em> underscore <em>must</em> be one of the keywords given above.</p>
 </div>
 <div class="section" id="building-during-development">
 <h2>Building during development<a class="headerlink" href="#building-during-development" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="build-single-components-in-a-different-modes-and-configurations">
-<h3>Build single components in a different modes and configurations<a class="headerlink" href="#build-single-components-in-a-different-modes-and-configurations" title="Permalink to this headline">¶</a></h3>
+<span id="usage-advanced-use-build-single-components-in-a-different-modes-and-configurations"></span><h3>Build single components in a different modes and configurations<a class="headerlink" href="#build-single-components-in-a-different-modes-and-configurations" title="Permalink to this headline">¶</a></h3>
 <p>If you are developing only one component at a time, it is not necessary to call the global build script from the root directory.
 There are also build scripts in each components subdirectory which can be called directly, e.g.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> components/flux_calculator
@@ -717,40 +688,6 @@ Moreover, if the source code exhibits uncommited changes when the build script w
 these diffrences are logged within that file.
 By executing the run script later on, the same tagging will be done for the main repository and this file is transferred to the destination.
 That way, you can always identify with which version of the code your working on the target.</p>
-</div>
-</div>
-<div class="section" id="running-during-development">
-<span id="usage-advanced-use-running-during-development"></span><h2>Running during development<a class="headerlink" href="#running-during-development" title="Permalink to this headline">¶</a></h2>
-<p>TODO: change this section to use of several input folders.</p>
-<div class="section" id="update-the-setup-before-running">
-<h3>Update the setup before running<a class="headerlink" href="#update-the-setup-before-running" title="Permalink to this headline">¶</a></h3>
-<p>During development it usual to modify the setup, i.e. parameters in input files.
-It is not intended to do this directly on the target,
-because then it is hard to keep track of the changes (still it is possible of course).
-However, the run script in the root directory offers the possibility to update the setup directly before running the model.
-Before running, you have to prepare a setup used for updating.
-The idea is, that you create a local folder where you put the input files that you want to modify.
-This folder, e.g. <code class="docutils literal notranslate"><span class="pre">./local_setup</span></code>, must have the same directory structure as a normal setup folder.
-For instance, if you want to have a modified <code class="docutils literal notranslate"><span class="pre">input/global_settings.py</span></code> at your destination,
-you create <code class="docutils literal notranslate"><span class="pre">./local_setup/input/global_settings.py</span></code>, make your changes in the file and then register this folder in the <code class="docutils literal notranslate"><span class="pre">SETUPS</span></code> file,
-e.g. by adding the line <code class="docutils literal notranslate"><span class="pre">update</span> <span class="pre">./local_setup</span></code>.
-Then you can run the model by calling</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run.sh hlrng update
-</pre></div>
-</div>
-<p>This will start the model on the <code class="docutils literal notranslate"><span class="pre">hlrng</span></code> but beforehand it will synchronize the contents of the <code class="docutils literal notranslate"><span class="pre">./local_setup</span></code> to the destination.
-Moreover, in <code class="docutils literal notranslate"><span class="pre">./local_setup</span></code> there is file <code class="docutils literal notranslate"><span class="pre">UPDATE_SETUP_INFO</span></code> created, which is also transferred to the target
-and contains information and time stamp of the updating.</p>
-<p>In general the run script can be called like</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run.sh hlrng <span class="o">[</span>prepare-before-run<span class="o">]</span> update1 update2 update3...
-</pre></div>
-</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">prepare-before-run</span></code> is optional and can be omitted, which is usually the case if it is not the very first run on a target.</p>
-<p>The second argument <code class="docutils literal notranslate"><span class="pre">prepare-before-run</span></code> is obligatory for the very first run if the necessary mapping files are not part of the setup yet.
-Putting this argument will create necessary mapping files in the destination directories.
-However, for all following runs <em>this is an optional argument and should be omitted</em>, unless you really want to re-create the mapping files.</p>
-<p>The setup updates are transferred in the order they appear, where the last one can, in principle, overwrite the ones before.
-<em>Note that you should not use the keyword <code class="docutils literal notranslate"><span class="pre">prepare-before-run</span></code> for a setup, otherwise the script will be confused.</em></p>
 </div>
 </div>
 <div class="section" id="archiving">

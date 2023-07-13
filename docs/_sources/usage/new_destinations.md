@@ -1,4 +1,7 @@
-# Enable new destinations
+(usage:new-target-machines)=
+# Add new target machines
+
+In order to add a new target machine the following steps have to be performed:
 
 1. Add a new keyword and the corresponding remote directory to your `DESTINATIONS` file.
 Let's call the new target keyword in this example `new-target`.

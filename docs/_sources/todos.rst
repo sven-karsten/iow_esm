@@ -16,12 +16,7 @@ TODOs
 
 .. todo::
 
-   ./getting_started/first_use.md:149 **TODO:** Explain strucutre of the setup folder (= root directoy)
-
-
-.. todo::
-
-   ./usage/advanced_use.md:48 TODO: change this section to use of several input folders.
+   ./getting_started/first_use.md:142 TODO: Add url to `SETUPS.example`, explain what has to be changed for other target
 
 
 .. todo::
