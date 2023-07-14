@@ -219,6 +219,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  postprocessing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../postprocessing/overview.html">
+   Overview
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   scripts
  </span>
 </p>
@@ -463,18 +475,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  general
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../general/history.html">
-   Documentation history
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   todos
  </span>
 </p>
@@ -631,10 +631,10 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="parallelize-the-flux-calulator">
 <h1>Parallelize the flux calulator<a class="headerlink" href="#parallelize-the-flux-calulator" title="Permalink to this headline">¶</a></h1>
 <p>It is possible to run the flux calculator in parallel where each process takes care of a specific part of the exchage grid.
-These parts are determined according to the ocean model’s parallelization: for each process of the ocean model, the corresponding ocean grid cells are identified and exchange grid cells that are linked to these cells are grouped together. Since some fields have to be regridded to other grids (e.g from the <em>t</em> to the <em>u</em> grid) there are overlaps between the groups, these overlaps are called halos, see <a class="reference internal" href="#fig-parallelize-flux-calculator"><span class="std std-numref">Fig. 5</span></a></p>
+These parts are determined according to the ocean model’s parallelization: for each process of the ocean model, the corresponding ocean grid cells are identified and exchange grid cells that are linked to these cells are grouped together. Since some fields have to be regridded to other grids (e.g from the <em>t</em> to the <em>u</em> grid) there are overlaps between the groups, these overlaps are called halos, see <a class="reference internal" href="#fig-parallelize-flux-calculator"><span class="std std-numref">Fig. 8</span></a></p>
 <div class="figure align-default" id="fig-parallelize-flux-calculator">
 <a class="reference internal image-reference" href="../_images/parallelize_flux_calculator.png"><img alt="../_images/parallelize_flux_calculator.png" src="../_images/parallelize_flux_calculator.png" style="height: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Domain decomposition for parallelizing the flux calculator.
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Domain decomposition for parallelizing the flux calculator.
 Blue are the ocean model’s grid cells, red is the domain decomposition for the ocean model’s processes and green is the corresponding exchange grid decomposition.</span><a class="headerlink" href="#fig-parallelize-flux-calculator" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="adapt-the-global-settings">

@@ -219,6 +219,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  postprocessing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../postprocessing/overview.html">
+   Overview
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   scripts
  </span>
 </p>
@@ -463,18 +475,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  general
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../general/history.html">
-   Documentation history
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   todos
  </span>
 </p>
@@ -550,6 +550,24 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-code-managment">
+   Source-code managment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#versioning-scheme">
+   Versioning scheme
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -562,6 +580,24 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-code-managment">
+   Source-code managment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#versioning-scheme">
+   Versioning scheme
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -570,7 +606,30 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="design-and-concept">
 <h1>Design and concept<a class="headerlink" href="#design-and-concept" title="Permalink to this headline">¶</a></h1>
-<p>TODO: Add figures and text here</p>
+<div class="section" id="source-code-managment">
+<h2>Source-code managment<a class="headerlink" href="#source-code-managment" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="project-structure">
+<a class="reference internal image-reference" href="../_images/project_structure.png"><img alt="../_images/project_structure.png" src="../_images/project_structure.png" style="height: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Visualization of the individual repositories within the IOW ESM package.</span><a class="headerlink" href="#project-structure" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="versioning-scheme">
+<h2>Versioning scheme<a class="headerlink" href="#versioning-scheme" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="version-management">
+<a class="reference internal image-reference" href="../_images/version_management.png"><img alt="../_images/version_management.png" src="../_images/version_management.png" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Visualization of the relation between diffferent versions of the individual components and the whole package (connected via <code class="docutils literal notranslate"><span class="pre">main</span></code> repository).</span><a class="headerlink" href="#version-management" title="Permalink to this image">¶</a></p>
+</div>
+<p>Relation of individual versions and the version of the whole package is stored in the <code class="docutils literal notranslate"><span class="pre">ORIGINS</span></code> file, e.g. for the IOW ESM 1.03.00 this looks like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>components/OASIS3-MCT       https://git.io-warnemuende.de/iow_esm/components.oasis3-mct.git         <span class="m">1</span>.00.01
+components/flux_calculator  https://git.io-warnemuende.de/iow_esm/components.flux_calculator.git    <span class="m">1</span>.02.00
+components/MOM5             https://git.io-warnemuende.de/iow_esm/components.mom5.git               <span class="m">1</span>.01.00
+components/CCLM             https://git.io-warnemuende.de/iow_esm/components.cclm.git               <span class="m">1</span>.00.03
+tools/I2LM                  https://git.io-warnemuende.de/iow_esm/tools.i2lm.git                    <span class="m">1</span>.00.01
+postprocess                 https://git.io-warnemuende.de/iow_esm/postprocess.git                   <span class="m">1</span>.02.00
+</pre></div>
+</div>
+<p>For the development branch (i.e. the master branch) the version numbers are omitted and all components are taken from the head of their corresponding master branches.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

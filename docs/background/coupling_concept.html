@@ -219,6 +219,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  postprocessing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../postprocessing/overview.html">
+   Overview
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   scripts
  </span>
 </p>
@@ -463,18 +475,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  general
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../general/history.html">
-   Documentation history
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   todos
  </span>
 </p>
@@ -609,35 +609,35 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="coupling-concept">
-<h1>Coupling concept<a class="headerlink" href="#coupling-concept" title="Permalink to this headline">¶</a></h1>
+<span id="background-coupling-concept"></span><h1>Coupling concept<a class="headerlink" href="#coupling-concept" title="Permalink to this headline">¶</a></h1>
 <p>One basic problem when dealing with regional climate models system is that the individual components (atmosphere, ocean, land etc.)
-are described by different models (realized as computer programs) that act on different grids, see  <a class="reference internal" href="#fig-grids"><span class="std std-numref">Fig. 1</span></a> and <a class="reference internal" href="#fig-grids1d"><span class="std std-numref">Fig. 2</span></a>.</p>
+are described by different models (realized as computer programs) that act on different grids, see  <a class="reference internal" href="#fig-grids"><span class="std std-numref">Fig. 2</span></a> and <a class="reference internal" href="#fig-grids1d"><span class="std std-numref">Fig. 3</span></a>.</p>
 <p>Still, the components have to be coupled in order communicate their state to each other and exchange fluxes as given by nature itself.</p>
 <div class="figure align-default" id="fig-grids">
 <a class="reference internal image-reference" href="../_images/grids.png"><img alt="../_images/grids.png" src="../_images/grids.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Overlaying grids of atmospheric and ocean model for the Baltic Sea</span><a class="headerlink" href="#fig-grids" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Overlaying grids of atmospheric and ocean model for the Baltic Sea</span><a class="headerlink" href="#fig-grids" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="fig-grids1d">
 <a class="reference internal image-reference" href="../_images/grids1D.png"><img alt="../_images/grids1D.png" src="../_images/grids1D.png" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Abstraction of figure <a class="reference internal" href="#fig-grids"><span class="std std-numref">Fig. 1</span></a> in one spatial horizontal dimension. Bottom model can support different surface types as water (blue) and ice (white).</span><a class="headerlink" href="#fig-grids1d" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Abstraction of figure <a class="reference internal" href="#fig-grids"><span class="std std-numref">Fig. 2</span></a> in one spatial horizontal dimension. Bottom model can support different surface types as water (blue) and ice (white).</span><a class="headerlink" href="#fig-grids1d" title="Permalink to this image">¶</a></p>
 </div>
 <p>To exemplify this problem let us consider the calculation of a flux of something from the atmosphere to the bottom.
 Usually, if the flux depends on the state of the ocean, some state variables have to be communicated first to the atmosphere.
 Since the atmospheric grids are normally larger, the information has to be averaged (weighted by areas) over several bottom cells,
-over different surface types, see <a class="reference internal" href="#fig-conservative-mapping1"><span class="std std-numref">Fig. 3</span></a>.</p>
+over different surface types, see <a class="reference internal" href="#fig-conservative-mapping1"><span class="std std-numref">Fig. 4</span></a>.</p>
 <p>With this averaged state information and its own internal state, the atmospheric model can now calculate the flux as a field on the atmospheric grid.
 It is noteworthy that the flux cannot be calculated for the different surface types differently, since the atmospheric model does not know about that (at least not without changing the code significantly).
 Finally, the flux field then has to be redistributed on the bottom cells (again in a area-weighted manner such that flux variable is overall conserved),
-see <a class="reference internal" href="#fig-conservative-mapping2"><span class="std std-numref">Fig. 4</span></a>.
+see <a class="reference internal" href="#fig-conservative-mapping2"><span class="std std-numref">Fig. 5</span></a>.
 Since the flux is only calculated from averaged information and not surface-type-dependent, this approach locally not consistent and can become inaccurate.
 This is especially true if many bottom grid cells are covered by one atmospheric grid cell.</p>
 <div class="figure align-default" id="fig-conservative-mapping1">
 <a class="reference internal image-reference" href="../_images/conservative_mapping1.png"><img alt="../_images/conservative_mapping1.png" src="../_images/conservative_mapping1.png" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Average of ocean’s state variables communicated to the atmosphere.</span><a class="headerlink" href="#fig-conservative-mapping1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Average of ocean’s state variables communicated to the atmosphere.</span><a class="headerlink" href="#fig-conservative-mapping1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="fig-conservative-mapping2">
 <a class="reference internal image-reference" href="../_images/conservative_mapping2.png"><img alt="../_images/conservative_mapping2.png" src="../_images/conservative_mapping2.png" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Calculation of fluxes in the atmospheric model and remapping on to the ocean’s grid.</span><a class="headerlink" href="#fig-conservative-mapping2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Calculation of fluxes in the atmospheric model and remapping on to the ocean’s grid.</span><a class="headerlink" href="#fig-conservative-mapping2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="current-implementation">
 <h2>Current implementation<a class="headerlink" href="#current-implementation" title="Permalink to this headline">¶</a></h2>

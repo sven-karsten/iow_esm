@@ -1,10 +1,7 @@
+.. _todos:
+
 TODOs
 =====
-.. todo::
-
-   ./development/design_concept.md:3 TODO: Add figures and text here
-
-
 .. todo::
 
    ./development/extend_documentation.md:3 TODO
