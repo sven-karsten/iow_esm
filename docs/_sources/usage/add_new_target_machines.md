@@ -1,4 +1,4 @@
-(usage:new-target-machines)=
+(usage:add-new-target-machines)=
 # Add new target machines
 
 In order to add a new target machine the following steps have to be performed:

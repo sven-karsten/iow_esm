@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Attempt handling" href="attempt_handling.html" />
-    <link rel="prev" title="Testing the model" href="../development/testing.html" />
+    <link rel="prev" title="Add new target machines" href="add_new_target_machines.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -156,6 +156,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="add_new_target_machines.html">
+   Add new target machines
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Advanced use
@@ -575,6 +580,11 @@ const thebe_selector_output = ".output, .cell_output"
      Build tagging
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prepare-mappings-before-the-run-starts">
+     Prepare mappings before the run starts
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -627,6 +637,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#build-tagging">
      Build tagging
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prepare-mappings-before-the-run-starts">
+     Prepare mappings before the run starts
     </a>
    </li>
   </ul>
@@ -689,6 +704,13 @@ these diffrences are logged within that file.
 By executing the run script later on, the same tagging will be done for the main repository and this file is transferred to the destination.
 That way, you can always identify with which version of the code your working on the target.</p>
 </div>
+<div class="section" id="prepare-mappings-before-the-run-starts">
+<span id="usage-advanced-use-prepare-before-run"></span><h3>Prepare mappings before the run starts<a class="headerlink" href="#prepare-mappings-before-the-run-starts" title="Permalink to this headline">¶</a></h3>
+<p>If you want to create new mappings between the model grids (becaus you updated the setups or the paralleization layout) you can put an additional argument (literaly <code class="docutils literal notranslate"><span class="pre">prepare-before-run</span></code>) to the run command, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run.sh prepare-before-run hlrng
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="archiving">
 <h2>Archiving<a class="headerlink" href="#archiving" title="Permalink to this headline">¶</a></h2>
@@ -737,11 +759,11 @@ Note that the base setup and the archive must be available via the same machine 
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../development/testing.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="add_new_target_machines.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Testing the model</p>
+            <p class="prev-next-title">Add new target machines</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="attempt_handling.html" title="next page">

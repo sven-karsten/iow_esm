@@ -82,7 +82,7 @@ where
 
 At the moment there are running build scripts only for these targets, which can be found the file `AVAILABLE_TARGETS` as well.
 Do not edit or commit this file unless you really know what you are doing.
-**IMPORTANT: If you want to add more targets, it will be explained in [](usage:new-target-machines).**
+**IMPORTANT: If you want to add more targets, it will be explained in [](usage:add-new-target-machines).**
 
 The second element in a line of `DESTINATIONS.example` corresponds to the *root directory on the target*, the path, where the whole model will be deployed, built and run.
 If the path on the target does not exist, it will be created.

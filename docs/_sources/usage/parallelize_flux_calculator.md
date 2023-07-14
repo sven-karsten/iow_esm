@@ -60,7 +60,7 @@ cd scripts/prepare
 python3 create_mappings.py
 ```
 
-Alternatively you can use the `prepare-before-run` option of the run script, see [](usage:advanced_use:running_during_development).
+Alternatively you can use the `prepare-before-run` option of the run script, see [](usage:advanced_use:prepare_before_run).
 
 Techinically the `parallelize_mappings.py` script in `scripts/prepare` creates the mapping files that are necessary for the parallel mode.
 

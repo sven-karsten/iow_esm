@@ -44,6 +44,16 @@ By executing the run script later on, the same tagging will be done for the main
 That way, you can always identify with which version of the code your working on the target. 
 
 
+(usage:advanced_use:prepare_before_run)=
+### Prepare mappings before the run starts
+
+If you want to create new mappings between the model grids (becaus you updated the setups or the paralleization layout) you can put an additional argument (literaly `prepare-before-run`) to the run command, e.g.
+
+``` bash
+./run.sh prepare-before-run hlrng
+``` 
+
+
 ## Archiving
 
 ### Archiving the employed setup
